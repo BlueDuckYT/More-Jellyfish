@@ -7,8 +7,7 @@ import blueduck.jellyfishing.jellyfishingmod.client.entity.renderer.PattyWagonRe
 import blueduck.jellyfishing.jellyfishingmod.items.JellyfishingSpawnEgg;
 import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingBlocks;
 import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingEntities;
-import blueduck.morejellyfish.morejellyfishmod.client.renderer.DiamondJellyfishRenderer;
-import blueduck.morejellyfish.morejellyfishmod.client.renderer.EmeraldJellyfishRenderer;
+import blueduck.morejellyfish.morejellyfishmod.client.renderer.*;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishEntities;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishItems;
 import net.minecraft.block.Block;
@@ -123,6 +122,21 @@ public class MoreJellyfishMod
             });
             RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.EMERALD_JELLYFISH.get(), (manager) -> {
                 return new EmeraldJellyfishRenderer(manager);
+            });
+            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.IRON_JELLYFISH.get(), (manager) -> {
+                return new IronJellyfishRenderer(manager);
+            });
+            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.GOLD_JELLYFISH.get(), (manager) -> {
+                return new GoldJellyfishRenderer(manager);
+            });
+            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.COAL_JELLYFISH.get(), (manager) -> {
+                return new CoalJellyfishRenderer(manager);
+            });
+            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), (manager) -> {
+                return new RedstoneJellyfishRenderer(manager);
+            });
+            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), (manager) -> {
+                return new LapisLazuliJellyfishRenderer(manager);
             });
 
         }
