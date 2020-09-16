@@ -10,6 +10,7 @@
   "item.more_jellyfish.coal_jellyfish": "Coal Jellyfish",
   "item.more_jellyfish.redstone_jellyfish": "Redstone Jellyfish",
   "item.more_jellyfish.lapis_lazuli_jellyfish": "Lapis Lazuli Jellyfish",
+  "item.more_jellyfish.slime_jellyfish": "Slime Jellyfish",
 
   "entity.more_jellyfish.diamond_jellyfish": "Diamond Jellyfish",
   "entity.more_jellyfish.emerald_jellyfish": "Emerald Jellyfish",
@@ -17,5 +18,6 @@
   "entity.more_jellyfish.gold_jellyfish": "Gold Jellyfish",
   "entity.more_jellyfish.coal_jellyfish": "Coal Jellyfish",
   "entity.more_jellyfish.redstone_jellyfish": "Redstone Jellyfish",
-  "entity.more_jellyfish.lapis_lazuli_jellyfish": "Lapis Lazuli Jellyfish"
+  "entity.more_jellyfish.lapis_lazuli_jellyfish": "Lapis Lazuli Jellyfish",
+  "entity.more_jellyfish.slime_jellyfish": "Slime Jellyfish"
 }
