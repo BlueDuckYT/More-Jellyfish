@@ -12,6 +12,6 @@ import net.minecraft.world.World;
 
 public class RedstoneJellyfishEntity extends AbstractJellyfishEntity {
     public RedstoneJellyfishEntity(EntityType<? extends AbstractFishEntity> type, World worldIn) {
-        super(type, worldIn, new ItemStack((IItemProvider) MoreJellyfishItems.REDSTONE_JELLYFISH.get(), 1), (Item) Items.REDSTONE, 0.75D, true, 200, 5, 0.75D, 0.75D, 0.2D);
+        super(type, worldIn, new ItemStack((IItemProvider) MoreJellyfishItems.REDSTONE_JELLYFISH.get(), 1), (Item) Items.REDSTONE, 0.75D, true, 60, 5, 0.75D, 0.5D, 0.2D);
     }
 }
