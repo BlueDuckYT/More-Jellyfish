@@ -1,0 +1,54 @@
+{
+  "type": "minecraft:gameplay",
+  "pools": [
+    {
+      "rolls": {
+        "min": 1.0,
+        "max": 1.0,
+        "type": "minecraft:uniform"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 65,
+          "name": "more_jellyfish:iron_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "more_jellyfish:coal_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 40,
+          "name": "more_jellyfish:gold_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 50,
+          "name": "more_jellyfish:redstone_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "more_jellyfish:lapis_lazuli_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "more_jellyfish:slime_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "name": "more_jellyfish:emerald_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "more_jellyfish:diamond_jellyfish"
+        }
+      ]
+    }
+  ]
+}
