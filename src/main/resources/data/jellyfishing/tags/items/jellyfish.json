@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "more_jellyfish:diamond_jellyfish",
+    "more_jellyfish:emerald_jellyfish",
+    "more_jellyfish:iron_jellyfish",
+    "more_jellyfish:gold_jellyfish",
+    "more_jellyfish:coal_jellyfish",
+    "more_jellyfish:redstone_jellyfish",
+    "more_jellyfish:lapis_lazuli_jellyfish",
+    "more_jellyfish:slime_jellyfish"
+  ]
+}
