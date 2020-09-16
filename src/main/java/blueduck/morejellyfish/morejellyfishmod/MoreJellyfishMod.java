@@ -149,7 +149,7 @@ public class MoreJellyfishMod {
             if (name.equals(LootTables.GAMEPLAY_FISHING)) {
                 LootPool pool = event.getTable().getPool("main");
                 if (pool != null) {
-                    addEntry(pool, getInjectEntry(new ResourceLocation("more_jellyfish:gameplay/fishing/more_jellyfish"), 4, 1));
+                    addEntry(pool, getInjectEntry(new ResourceLocation("more_jellyfish:gameplay/more_jellyfish"), 4, 1));
 
                 }
             }
