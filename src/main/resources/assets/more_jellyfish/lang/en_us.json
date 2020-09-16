@@ -1,0 +1,21 @@
+{
+  "item.more_jellyfish.diamond_shard": "Diamond Shard",
+  "item.more_jellyfish.diamond_fragment": "Diamond Fragment",
+  "item.more_jellyfish.emerald_fragment": "Emerald Fragment",
+
+  "item.more_jellyfish.diamond_jellyfish": "Diamond Jellyfish",
+  "item.more_jellyfish.emerald_jellyfish": "Emerald Jellyfish",
+  "item.more_jellyfish.iron_jellyfish": "Iron Jellyfish",
+  "item.more_jellyfish.gold_jellyfish": "Gold Jellyfish",
+  "item.more_jellyfish.coal_jellyfish": "Coal Jellyfish",
+  "item.more_jellyfish.redstone_jellyfish": "Redstone Jellyfish",
+  "item.more_jellyfish.lapis_lazuli_jellyfish": "Lapis Lazuli Jellyfish",
+
+  "entity.more_jellyfish.diamond_jellyfish": "Diamond Jellyfish",
+  "entity.more_jellyfish.emerald_jellyfish": "Emerald Jellyfish",
+  "entity.more_jellyfish.iron_jellyfish": "Iron Jellyfish",
+  "entity.more_jellyfish.gold_jellyfish": "Gold Jellyfish",
+  "entity.more_jellyfish.coal_jellyfish": "Coal Jellyfish",
+  "entity.more_jellyfish.redstone_jellyfish": "Redstone Jellyfish",
+  "entity.more_jellyfish.lapis_lazuli_jellyfish": "Lapis Lazuli Jellyfish"
+}
