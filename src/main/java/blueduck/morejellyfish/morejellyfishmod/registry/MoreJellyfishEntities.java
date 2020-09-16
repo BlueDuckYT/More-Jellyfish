@@ -1,15 +1,20 @@
 package blueduck.morejellyfish.morejellyfishmod.registry;
 
 import blueduck.jellyfishing.jellyfishingmod.JellyfishingMod;
+import blueduck.jellyfishing.jellyfishingmod.biomes.JellyfishFields;
 import blueduck.jellyfishing.jellyfishingmod.entities.AbstractJellyfishEntity;
 import blueduck.jellyfishing.jellyfishingmod.entities.BlueJellyfishEntity;
 import blueduck.jellyfishing.jellyfishingmod.entities.JellyfishEntity;
+import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingBiomes;
 import blueduck.morejellyfish.morejellyfishmod.MoreJellyfishMod;
+import blueduck.morejellyfish.morejellyfishmod.client.renderer.*;
 import blueduck.morejellyfish.morejellyfishmod.entity.*;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,6 +30,7 @@ public class MoreJellyfishEntities {
     public static final RegistryObject<EntityType<CoalJellyfishEntity>> COAL_JELLYFISH = ENTITIES.register("coal_jellyfish", () -> EntityType.Builder.<CoalJellyfishEntity>create(CoalJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/coal_jellyfish.png").toString()));
     public static final RegistryObject<EntityType<RedstoneJellyfishEntity>> REDSTONE_JELLYFISH = ENTITIES.register("redstone_jellyfish", () -> EntityType.Builder.<RedstoneJellyfishEntity>create(RedstoneJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/redstone_jellyfish.png").toString()));
     public static final RegistryObject<EntityType<LapisLazuliJellyfishEntity>> LAPIS_LAZULI_JELLYFISH = ENTITIES.register("lapis_lazuli_jellyfish", () -> EntityType.Builder.<LapisLazuliJellyfishEntity>create(LapisLazuliJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/lapis_lazuli_jellyfish.png").toString()));
+    public static final RegistryObject<EntityType<SlimeJellyfishEntity>> SLIME_JELLYFISH = ENTITIES.register("slime_jellyfish", () -> EntityType.Builder.<SlimeJellyfishEntity>create(SlimeJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/slime_jellyfish.png").toString()));
 
 
 
@@ -35,4 +41,31 @@ public class MoreJellyfishEntities {
         ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
+
+    public static void registerRenderer() {
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), (manager) -> {
+            return new DiamondJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.EMERALD_JELLYFISH.get(), (manager) -> {
+            return new EmeraldJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.IRON_JELLYFISH.get(), (manager) -> {
+            return new IronJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.GOLD_JELLYFISH.get(), (manager) -> {
+            return new GoldJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.COAL_JELLYFISH.get(), (manager) -> {
+            return new CoalJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), (manager) -> {
+            return new RedstoneJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), (manager) -> {
+            return new LapisLazuliJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.SLIME_JELLYFISH.get(), (manager) -> {
+            return new SlimeJellyfishRenderer(manager);
+        });
+    }
 }

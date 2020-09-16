@@ -126,27 +126,7 @@ public class MoreJellyfishMod
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), (manager) -> {
-                return new DiamondJellyfishRenderer(manager);
-            });
-            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.EMERALD_JELLYFISH.get(), (manager) -> {
-                return new EmeraldJellyfishRenderer(manager);
-            });
-            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.IRON_JELLYFISH.get(), (manager) -> {
-                return new IronJellyfishRenderer(manager);
-            });
-            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.GOLD_JELLYFISH.get(), (manager) -> {
-                return new GoldJellyfishRenderer(manager);
-            });
-            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.COAL_JELLYFISH.get(), (manager) -> {
-                return new CoalJellyfishRenderer(manager);
-            });
-            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), (manager) -> {
-                return new RedstoneJellyfishRenderer(manager);
-            });
-            RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), (manager) -> {
-                return new LapisLazuliJellyfishRenderer(manager);
-            });
+            MoreJellyfishEntities.registerRenderer();
 
         }
     }
