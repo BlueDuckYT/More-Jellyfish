@@ -10,6 +10,7 @@ import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingBiomes;
 import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingBlocks;
 import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingEntities;
 import blueduck.morejellyfish.morejellyfishmod.client.renderer.*;
+import blueduck.morejellyfish.morejellyfishmod.entity.MoreJellyfishSpawnEgg;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishEntities;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishItems;
 import net.minecraft.block.Block;
@@ -18,6 +19,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.storage.loot.LootEntry;
@@ -25,6 +27,7 @@ import net.minecraft.world.storage.loot.LootPool;
 import net.minecraft.world.storage.loot.LootTables;
 import net.minecraft.world.storage.loot.TableLootEntry;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -67,8 +70,8 @@ public class MoreJellyfishMod {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-        MoreJellyfishEntities.init();
         MoreJellyfishItems.init();
+        MoreJellyfishEntities.init();
 
 
     }
@@ -132,10 +135,21 @@ public class MoreJellyfishMod {
         public ClientEventBusSubscriber() {
         }
 
+        @SubscribeEvent(priority = EventPriority.LOWEST)
+        public static void onPostRegisterEntities(final RegistryEvent.Register<EntityType<?>> event) {
+            MoreJellyfishSpawnEgg.doDispenserSetup();
+        }
+
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MoreJellyfishEntities.registerRenderer();
 
+        }
+        @SubscribeEvent
+        public static void onItemColorEvent(ColorHandlerEvent.Item event) {
+            for (final SpawnEggItem egg : JellyfishingSpawnEgg.JELLYFISHING_SPAWN_EGGS) {
+                event.getItemColors().register((stack, i) -> egg.getColor(i), egg);
+            }
         }
     }
 
