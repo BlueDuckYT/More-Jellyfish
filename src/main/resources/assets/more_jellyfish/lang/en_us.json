@@ -19,5 +19,14 @@
   "entity.more_jellyfish.coal_jellyfish": "Coal Jellyfish",
   "entity.more_jellyfish.redstone_jellyfish": "Redstone Jellyfish",
   "entity.more_jellyfish.lapis_lazuli_jellyfish": "Lapis Lazuli Jellyfish",
-  "entity.more_jellyfish.slime_jellyfish": "Slime Jellyfish"
+  "entity.more_jellyfish.slime_jellyfish": "Slime Jellyfish",
+
+  "item.more_jellyfish.diamond_jellyfish_spawn_egg": "Diamond Jellyfish Spawn Egg",
+  "item.more_jellyfish.emerald_jellyfish_spawn_egg": "Emerald Jellyfish Spawn Egg",
+  "item.more_jellyfish.iron_jellyfish_spawn_egg": "Iron Jellyfish Spawn Egg",
+  "item.more_jellyfish.gold_jellyfish_spawn_egg": "Gold Jellyfish Spawn Egg",
+  "item.more_jellyfish.coal_jellyfish_spawn_egg": "Coal Jellyfish Spawn Egg",
+  "item.more_jellyfish.redstone_jellyfish_spawn_egg": "Redstone Jellyfish Spawn Egg",
+  "item.more_jellyfish.lapis_lazuli_jellyfish_spawn_egg": "Lapis Lazuli Jellyfish Spawn Egg",
+  "item.more_jellyfish.slime_jellyfish_spawn_egg": "Slime Jellyfish Spawn Egg"
 }
