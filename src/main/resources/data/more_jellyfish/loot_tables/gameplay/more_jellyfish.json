@@ -15,7 +15,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 80,
           "name": "more_jellyfish:coal_jellyfish"
         },
         {
@@ -35,7 +35,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
+          "weight": 30,
           "name": "more_jellyfish:slime_jellyfish"
         },
         {
