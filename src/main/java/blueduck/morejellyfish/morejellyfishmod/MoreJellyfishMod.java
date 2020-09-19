@@ -6,11 +6,10 @@ import blueduck.jellyfishing.jellyfishingmod.client.entity.renderer.BlueJellyfis
 import blueduck.jellyfishing.jellyfishingmod.client.entity.renderer.JellyfishRenderer;
 import blueduck.jellyfishing.jellyfishingmod.client.entity.renderer.PattyWagonRenderer;
 import blueduck.jellyfishing.jellyfishingmod.items.JellyfishingSpawnEgg;
-import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingBiomes;
-import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingBlocks;
-import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingEntities;
+import blueduck.jellyfishing.jellyfishingmod.registry.*;
 import blueduck.morejellyfish.morejellyfishmod.client.renderer.*;
 import blueduck.morejellyfish.morejellyfishmod.entity.MoreJellyfishSpawnEgg;
+import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishBiomes;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishBlocks;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishEntities;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishItems;
@@ -20,10 +19,16 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.merchant.villager.VillagerProfession;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.item.MerchantOffer;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.placement.CountConfig;
 import net.minecraft.world.storage.loot.LootEntry;
 import net.minecraft.world.storage.loot.LootPool;
 import net.minecraft.world.storage.loot.LootTables;
@@ -33,6 +38,7 @@ import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -74,6 +80,7 @@ public class MoreJellyfishMod {
 
         MoreJellyfishItems.init();
         MoreJellyfishBlocks.init();
+        MoreJellyfishBiomes.init();
         MoreJellyfishEntities.init();
 
 
@@ -132,6 +139,11 @@ public class MoreJellyfishMod {
             // register a new block here
             LOGGER.info("HELLO from Register Block");
         }
+        @SubscribeEvent
+        public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
+            MoreJellyfishBiomes.registerBiomes();
+            MoreJellyfishBiomes.ROCK_BOTTOM.get().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, JellyfishingFeatures.CORAL_PLANT_FEATURE.withConfiguration(new CountConfig(1)));
+        }
     }
 
     @Mod.EventBusSubscriber(
@@ -188,6 +200,24 @@ public class MoreJellyfishMod {
                 throw new RuntimeException("Attempted to add a duplicate entry to pool: " + entry);
             }
             lootEntries.add(entry);
+        }
+
+        @SubscribeEvent
+        public static void villagerTrades(final VillagerTradesEvent event) {
+            if (event.getType() == VillagerProfession.FISHERMAN) {
+                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.DIAMOND_JELLYFISH.get()), new ItemStack(Items.EMERALD, 10), 3, 10, 0.05F));
+                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.REDSTONE_JELLYFISH.get()), new ItemStack(Items.EMERALD, 4), 3, 10, 0.05F));
+                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.IRON_JELLYFISH.get()), new ItemStack(Items.EMERALD, 3), 3, 10, 0.05F));
+                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.GOLD_JELLYFISH.get()), new ItemStack(Items.EMERALD, 5), 3, 10, 0.05F));
+                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.COAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 3, 10, 0.05F));
+                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.EMERALD_JELLYFISH.get()), new ItemStack(Items.EMERALD, 5), 3, 10, 0.05F));
+            }
+            if (event.getType() == VillagerProfession.MASON) {
+                event.getTrades().get(3).add((entity, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), new ItemStack(MoreJellyfishBlocks.POLISHED_DEEP_CORALSTONE_ITEM.get(), 4), 5, 10, 0.05F));
+                event.getTrades().get(3).add((entity, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), new ItemStack(MoreJellyfishBlocks.DEEP_CORALSTONE_ITEM.get(), 8), 5, 10, 0.05F));
+                event.getTrades().get(3).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishBlocks.DEEP_CORALSTONE_ITEM.get(), 16), new ItemStack(Items.EMERALD, 1), 5, 10, 0.05F));
+                event.getTrades().get(4).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishBlocks.DEEP_CORALSTONE_ITEM.get(), 8), new ItemStack(Items.EMERALD, 1), 5, 10, 0.05F));
+            }
         }
     }
 }
