@@ -22,6 +22,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.storage.loot.LootEntry;
 import net.minecraft.world.storage.loot.LootPool;
 import net.minecraft.world.storage.loot.LootTables;
@@ -86,6 +87,11 @@ public class MoreJellyfishMod {
         ((JellyfishFields) JellyfishingBiomes.JELLYFISH_FIELDS.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 6, 1, 1));
         ((JellyfishFields) JellyfishingBiomes.JELLYFISH_FIELDS.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 5, 1, 1));
 
+
+
+        Biomes.SWAMP.getSpawns(EntityClassification.WATER_CREATURE).add(new Biome.SpawnListEntry(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 10, 1, 1));
+        Biomes.BADLANDS.getSpawns(EntityClassification.WATER_CREATURE).add(new Biome.SpawnListEntry(MoreJellyfishEntities.GOLD_JELLYFISH.get(), 10, 1, 1));
+
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -147,7 +153,7 @@ public class MoreJellyfishMod {
         }
         @SubscribeEvent
         public static void onItemColorEvent(ColorHandlerEvent.Item event) {
-            for (final SpawnEggItem egg : JellyfishingSpawnEgg.JELLYFISHING_SPAWN_EGGS) {
+            for (final SpawnEggItem egg : MoreJellyfishSpawnEgg.JELLYFISHING_SPAWN_EGGS) {
                 event.getItemColors().register((stack, i) -> egg.getColor(i), egg);
             }
         }

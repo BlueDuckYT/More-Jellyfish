@@ -35,7 +35,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 30,
+          "weight": 15,
           "name": "more_jellyfish:slime_jellyfish"
         },
         {
@@ -47,6 +47,50 @@
           "type": "minecraft:item",
           "weight": 1,
           "name": "more_jellyfish:diamond_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:swamp"
+                  }
+                }
+              ]
+            }
+          ],
+
+          "weight": 75,
+          "name": "more_jellyfish:slime_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:badlands"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:badlands_plateau"
+                  }
+                }
+              ]
+            }
+          ],
+
+          "weight": 75,
+          "name": "more_jellyfish:gold_jellyfish"
         }
       ]
     }

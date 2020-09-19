@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:gameplay",
+  "pools": [
+    {
+      "rolls": {
+        "min": 1.0,
+        "max": 1.0,
+        "type": "minecraft:uniform"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 80,
+          "name": "more_jellyfish:coal_jellyfish"
+        }
+      ]
+    }
+  ]
+}
