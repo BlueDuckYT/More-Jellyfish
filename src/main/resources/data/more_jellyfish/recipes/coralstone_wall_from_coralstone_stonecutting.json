@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "more_jellyfishing:deep_coralstone"
+    "item": "more_jellyfish:deep_coralstone"
   },
-  "result": "more_jellyfishing:deep_coralstone_wall",
+  "result": "more_jellyfish:deep_coralstone_wall",
   "count": 1
 }

@@ -9,10 +9,10 @@
       "item": "minecraft:seagrass"
     },
     "$": {
-      "item": "more_jellyfishing:deep_coralstone"
+      "item": "more_jellyfish:deep_coralstone"
     }
   },
   "result": {
-    "item": "more_jellyfishing:deep_algae_grass"
+    "item": "more_jellyfish:deep_algae_grass"
   }
 }
