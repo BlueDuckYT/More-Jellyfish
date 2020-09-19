@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "more_jellyfish:block/polished_deep_coralstone"
+  }
+}

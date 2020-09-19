@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": { "model": "more_jellyfish:block/deep_coralstone_slab" },
+    "type=top": { "model": "more_jellyfish:block/deep_coralstone_slab_top" },
+    "type=double": { "model": "more_jellyfish:block/deep_coralstone" }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "more_jellyfishing:deep_polished_coralstone"
+    }
+  },
+  "result": {
+    "item": "more_jellyfishing:polished_deep_coralstone_slab",
+    "count": 6
+  }
+}

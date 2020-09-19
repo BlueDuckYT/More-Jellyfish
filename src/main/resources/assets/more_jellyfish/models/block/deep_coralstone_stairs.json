@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "more_jellyfish:block/deep_coralstone",
+    "top": "more_jellyfish:block/deep_coralstone",
+    "side": "more_jellyfish:block/deep_coralstone"
+  }
+}

@@ -1,4 +1,16 @@
 {
+
+  "block.more_jellyfish.deep_coralstone": "Deep Coralstone",
+  "block.more_jellyfish.deep_coralstone_wall": "Deep Coralstone Wall",
+  "block.more_jellyfish.deep_coralstone_stairs": "Deep Coralstone Stairs",
+  "block.more_jellyfish.deep_coralstone_slab": "Deep Coralstone Slab",
+
+  "block.more_jellyfish.polished_deep_coralstone": "Polished Deep Coralstone",
+  "block.more_jellyfish.polished_deep_coralstone_stairs": "Polished Deep Coralstone Stairs",
+  "block.more_jellyfish.polished_deep_coralstone_slab": "Polished Deep Coralstone Slab",
+
+  "block.more_jellyfish.deep_algae_grass": "Deep Algae Grass",
+
   "item.more_jellyfish.diamond_shard": "Diamond Shard",
   "item.more_jellyfish.diamond_fragment": "Diamond Fragment",
   "item.more_jellyfish.emerald_fragment": "Emerald Fragment",
@@ -28,5 +40,5 @@
   "item.more_jellyfish.coal_jellyfish_spawn_egg": "Coal Jellyfish Spawn Egg",
   "item.more_jellyfish.redstone_jellyfish_spawn_egg": "Redstone Jellyfish Spawn Egg",
   "item.more_jellyfish.lapis_lazuli_jellyfish_spawn_egg": "Lapis Lazuli Jellyfish Spawn Egg",
-  "item.more_jellyfish.slime_jellyfish_spawn_egg": "Slime Jellyfish Spawn Egg"
+  "item.more_jellyfish.slime_jellyfish_spawn_egg": "Slime Jellyfish Spawn Egg",
 }

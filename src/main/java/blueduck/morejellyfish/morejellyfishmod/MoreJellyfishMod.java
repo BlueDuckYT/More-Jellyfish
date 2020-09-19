@@ -11,6 +11,7 @@ import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingBlocks;
 import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingEntities;
 import blueduck.morejellyfish.morejellyfishmod.client.renderer.*;
 import blueduck.morejellyfish.morejellyfishmod.entity.MoreJellyfishSpawnEgg;
+import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishBlocks;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishEntities;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishItems;
 import net.minecraft.block.Block;
@@ -72,6 +73,7 @@ public class MoreJellyfishMod {
         MinecraftForge.EVENT_BUS.register(this);
 
         MoreJellyfishItems.init();
+        MoreJellyfishBlocks.init();
         MoreJellyfishEntities.init();
 
 

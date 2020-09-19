@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "more_jellyfish:deep_coralstone"
+    },
+    "$": {
+      "item": "minecraft:white_dye"
+    }
+  },
+  "result": {
+    "item": "jellyfishing:coralstone",
+    "count": 8
+  }
+}
