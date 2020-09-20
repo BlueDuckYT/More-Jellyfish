@@ -1,0 +1,31 @@
+{
+  "parent": "jellyfishing:jellyfishing/root",
+  "display": {
+    "icon": {
+      "item": "more_jellyfish:deep_algae_grass"
+    },
+    "title": {
+      "translate": "advancements.more_jellyfish.kelp_forest.title"
+    },
+    "description": {
+      "translate": "advancements.more_jellyfish.kelp_forest.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "net": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "more_jellyfish:kelp_forest"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "net"
+    ]
+  ]
+}
