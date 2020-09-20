@@ -12,6 +12,16 @@
           "type": "minecraft:item",
           "weight": 80,
           "name": "more_jellyfish:coal_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 40,
+          "name": "more_jellyfish:glowstone_jellyfish"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "more_jellyfish:quartz_jellyfish"
         }
       ]
     }

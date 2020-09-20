@@ -8,6 +8,11 @@
     "more_jellyfish:coal_jellyfish",
     "more_jellyfish:redstone_jellyfish",
     "more_jellyfish:lapis_lazuli_jellyfish",
-    "more_jellyfish:slime_jellyfish"
+    "more_jellyfish:slime_jellyfish",
+    "more_jellyfish:quartz_jellyfish",
+    "more_jellyfish:glowstone_jellyfish",
+    "more_jellyfish:sponge_jellyfish",
+    "more_jellyfish:red_fungal_jellyfish",
+    "more_jellyfish:brown_fungal_jellyfish"
   ]
 }
