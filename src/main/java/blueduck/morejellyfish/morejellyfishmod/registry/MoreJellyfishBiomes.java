@@ -3,6 +3,7 @@ package blueduck.morejellyfish.morejellyfishmod.registry;
 import blueduck.jellyfishing.jellyfishingmod.JellyfishingMod;
 import blueduck.jellyfishing.jellyfishingmod.biomes.JellyfishFields;
 import blueduck.morejellyfish.morejellyfishmod.MoreJellyfishMod;
+import blueduck.morejellyfish.morejellyfishmod.misc.KelpForest;
 import blueduck.morejellyfish.morejellyfishmod.misc.RockBottom;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
@@ -17,6 +18,7 @@ public class MoreJellyfishBiomes {
     public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, MoreJellyfishMod.MODID);
 
     public static final RegistryObject<Biome> ROCK_BOTTOM = BIOMES.register("rock_bottom", () -> new RockBottom());
+    public static final RegistryObject<Biome> KELP_FOREST = BIOMES.register("kelp_forest", () -> new KelpForest());
 
 
     public static void init() {
@@ -25,6 +27,7 @@ public class MoreJellyfishBiomes {
 
     public static void registerBiomes() {
         registerBiome(ROCK_BOTTOM.get(), BiomeManager.BiomeType.COOL, BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.OVERWORLD);
+        registerBiome(KELP_FOREST.get(), BiomeManager.BiomeType.COOL, BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.OVERWORLD);
     }
     public static void registerBiome(Biome biome, BiomeManager.BiomeType type, BiomeDictionary.Type... types) {
         BiomeDictionary.addTypes(biome, types);

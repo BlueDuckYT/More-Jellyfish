@@ -118,6 +118,8 @@ public class MoreJellyfishMod {
 
         MoreJellyfishBiomes.ROCK_BOTTOM.get().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 50)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(250, 20, 0, 60))));
         DefaultBiomeFeatures.addOres(MoreJellyfishBiomes.ROCK_BOTTOM.get());
+        MoreJellyfishBiomes.KELP_FOREST.get().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 50)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(250, 20, 0, 60))));
+        DefaultBiomeFeatures.addOres(MoreJellyfishBiomes.KELP_FOREST.get());
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -160,6 +162,7 @@ public class MoreJellyfishMod {
         public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
             MoreJellyfishBiomes.registerBiomes();
             MoreJellyfishBiomes.ROCK_BOTTOM.get().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, JellyfishingFeatures.CORAL_PLANT_FEATURE.withConfiguration(new CountConfig(1)));
+            MoreJellyfishBiomes.KELP_FOREST.get().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, JellyfishingFeatures.CORAL_PLANT_FEATURE.withConfiguration(new CountConfig(1)));
         }
     }
 
