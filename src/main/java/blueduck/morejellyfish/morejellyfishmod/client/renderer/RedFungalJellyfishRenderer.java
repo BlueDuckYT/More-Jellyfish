@@ -14,6 +14,6 @@ public class RedFungalJellyfishRenderer extends MobRenderer<RedFungalJellyfishEn
 
     @Override
     public ResourceLocation getEntityTexture(RedFungalJellyfishEntity entity) {
-        return new ResourceLocation("more_jellyfish", "textures/entity/quartz_jellyfish.png");
+        return new ResourceLocation("more_jellyfish", "textures/entity/red_fungal_jellyfish.png");
     }
 }
