@@ -19,6 +19,7 @@
   "item.more_jellyfish.diamond_shard": "Diamond Shard",
   "item.more_jellyfish.diamond_fragment": "Diamond Fragment",
   "item.more_jellyfish.emerald_fragment": "Emerald Fragment",
+  "item.more_jellyfish.sponge_chunk": "Sponge Chunk",
 
   "item.more_jellyfish.diamond_jellyfish": "Diamond Jellyfish",
   "item.more_jellyfish.emerald_jellyfish": "Emerald Jellyfish",
@@ -28,6 +29,11 @@
   "item.more_jellyfish.redstone_jellyfish": "Redstone Jellyfish",
   "item.more_jellyfish.lapis_lazuli_jellyfish": "Lapis Lazuli Jellyfish",
   "item.more_jellyfish.slime_jellyfish": "Slime Jellyfish",
+  "item.more_jellyfish.quartz_jellyfish": "Quartz Jellyfish",
+  "item.more_jellyfish.sponge_jellyfish": "Sponge Jellyfish",
+  "item.more_jellyfish.glowstone_jellyfish": "Glowstone Jellyfish",
+  "item.more_jellyfish.red_fungal_jellyfish": "Red Fungal Jellyfish",
+  "item.more_jellyfish.brown_fungal_jellyfish": "Brown Fungal Jellyfish",
 
   "entity.more_jellyfish.diamond_jellyfish": "Diamond Jellyfish",
   "entity.more_jellyfish.emerald_jellyfish": "Emerald Jellyfish",
@@ -37,6 +43,11 @@
   "entity.more_jellyfish.redstone_jellyfish": "Redstone Jellyfish",
   "entity.more_jellyfish.lapis_lazuli_jellyfish": "Lapis Lazuli Jellyfish",
   "entity.more_jellyfish.slime_jellyfish": "Slime Jellyfish",
+  "entity.more_jellyfish.quartz_jellyfish": "Quartz Jellyfish",
+  "entity.more_jellyfish.sponge_jellyfish": "Sponge Jellyfish",
+  "entity.more_jellyfish.glowstone_jellyfish": "Glowstone Jellyfish",
+  "entity.more_jellyfish.red_fungal_jellyfish": "Red Fungal Jellyfish",
+  "entity.more_jellyfish.brown_fungal_jellyfish": "Brown Fungal Jellyfish",
 
   "item.more_jellyfish.diamond_jellyfish_spawn_egg": "Diamond Jellyfish Spawn Egg",
   "item.more_jellyfish.emerald_jellyfish_spawn_egg": "Emerald Jellyfish Spawn Egg",
@@ -45,5 +56,10 @@
   "item.more_jellyfish.coal_jellyfish_spawn_egg": "Coal Jellyfish Spawn Egg",
   "item.more_jellyfish.redstone_jellyfish_spawn_egg": "Redstone Jellyfish Spawn Egg",
   "item.more_jellyfish.lapis_lazuli_jellyfish_spawn_egg": "Lapis Lazuli Jellyfish Spawn Egg",
-  "item.more_jellyfish.slime_jellyfish_spawn_egg": "Slime Jellyfish Spawn Egg"
+  "item.more_jellyfish.slime_jellyfish_spawn_egg": "Slime Jellyfish Spawn Egg",
+  "item.more_jellyfish.quartz_jellyfish_spawn_egg": "Quartz Jellyfish Spawn Egg",
+  "item.more_jellyfish.sponge_jellyfish_spawn_egg": "Sponge Jellyfish Spawn Egg",
+  "item.more_jellyfish.glowstone_jellyfish_spawn_egg": "Glowstone Jellyfish Spawn Egg",
+  "item.more_jellyfish.red_fungal_jellyfish_spawn_egg": "Red Fungal Jellyfish Spawn Egg",
+  "item.more_jellyfish.brown_fungal_jellyfish_spawn_egg": "Brown Fungal Jellyfish Spawn Egg"
 }

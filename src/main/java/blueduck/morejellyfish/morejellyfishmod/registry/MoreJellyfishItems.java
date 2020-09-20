@@ -26,6 +26,10 @@ public class MoreJellyfishItems {
     public static final RegistryObject<Item> REDSTONE_JELLYFISH_SPAWN_EGG = ITEMS.register("redstone_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.REDSTONE_JELLYFISH.get(),16719380, 4849664, new Item.Properties().group(ItemGroup.MISC)));
     public static final RegistryObject<Item> LAPIS_LAZULI_JELLYFISH_SPAWN_EGG = ITEMS.register("lapis_lazuli_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(),917582, 4871679, new Item.Properties().group(ItemGroup.MISC)));
     public static final RegistryObject<Item> SLIME_JELLYFISH_SPAWN_EGG = ITEMS.register("slime_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.SLIME_JELLYFISH.get(),4905017, 4890425, new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> SPONGE_JELLYFISH_SPAWN_EGG = ITEMS.register("sponge_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.SPONGE_JELLYFISH.get(),13479464, 7628544, new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> QUARTZ_JELLYFISH_SPAWN_EGG = ITEMS.register("quartz_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.QUARTZ_JELLYFISH.get(),16187391, 16773072, new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> RED_FUNGAL_JELLYFISH_SPAWN_EGG = ITEMS.register("red_fungal_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.RED_FUNGAL_JELLYFISH.get(),16716800, 16770269, new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> BROWN_FUNGAL_JELLYFISH_SPAWN_EGG = ITEMS.register("brown_fungal_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.BROWN_FUNGAL_JELLYFISH.get(),10513224, 7367496, new Item.Properties().group(ItemGroup.MISC)));
 
 
 
