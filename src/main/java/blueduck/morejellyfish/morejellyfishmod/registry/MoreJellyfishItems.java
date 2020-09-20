@@ -1,12 +1,8 @@
 package blueduck.morejellyfish.morejellyfishmod.registry;
 
-import blueduck.jellyfishing.jellyfishingmod.JellyfishingMod;
 import blueduck.jellyfishing.jellyfishingmod.items.JellyfishItem;
-import blueduck.jellyfishing.jellyfishingmod.items.JellyfishingSpawnEgg;
-import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingEntities;
 import blueduck.morejellyfish.morejellyfishmod.MoreJellyfishMod;
-import blueduck.morejellyfish.morejellyfishmod.entity.MoreJellyfishSpawnEgg;
-import net.minecraft.item.Food;
+import blueduck.morejellyfish.morejellyfishmod.misc.MoreJellyfishSpawnEgg;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.RegistryObject;

@@ -1,7 +1,6 @@
-package blueduck.morejellyfish.morejellyfishmod.entity;
+package blueduck.morejellyfish.morejellyfishmod.misc;
 
 import net.minecraft.block.DispenserBlock;
-import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.entity.EntityType;
@@ -12,12 +11,9 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.function.Supplier;
 
 public class MoreJellyfishSpawnEgg extends SpawnEggItem {
