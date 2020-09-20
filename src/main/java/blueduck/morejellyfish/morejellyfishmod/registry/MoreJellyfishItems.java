@@ -33,10 +33,10 @@ public class MoreJellyfishItems {
     public static final RegistryObject<Item> DIAMOND_SHARD = ITEMS.register("diamond_shard", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     public static final RegistryObject<Item> DIAMOND_FRAGMENT = ITEMS.register("diamond_fragment", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
 
-
-
-
     public static final RegistryObject<Item> EMERALD_FRAGMENT = ITEMS.register("emerald_fragment", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+
+
+    public static final RegistryObject<Item> SPONGE_CHUNK = ITEMS.register("sponge_chunk", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
 
     public static final RegistryObject<Item> DIAMOND_JELLYFISH = ITEMS.register("diamond_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.DIAMOND_JELLYFISH.get()));
     public static final RegistryObject<Item> EMERALD_JELLYFISH = ITEMS.register("emerald_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.EMERALD_JELLYFISH.get()));
@@ -47,6 +47,14 @@ public class MoreJellyfishItems {
     public static final RegistryObject<Item> LAPIS_LAZULI_JELLYFISH = ITEMS.register("lapis_lazuli_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get()));
 
     public static final RegistryObject<Item> SLIME_JELLYFISH = ITEMS.register("slime_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.SLIME_JELLYFISH.get()));
+    public static final RegistryObject<Item> SPONGE_JELLYFISH = ITEMS.register("sponge_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.SPONGE_JELLYFISH.get()));
+    public static final RegistryObject<Item> GLOWSTONE_JELLYFISH = ITEMS.register("glowstone_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.GLOWSTONE_JELLYFISH.get()));
+    public static final RegistryObject<Item> QUARTZ_JELLYFISH = ITEMS.register("quartz_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.QUARTZ_JELLYFISH.get()));
+    public static final RegistryObject<Item> RED_FUNGAL_JELLYFISH = ITEMS.register("red_fungal_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.RED_FUNGAL_JELLYFISH.get()));
+    public static final RegistryObject<Item> BROWN_FUNGAL_JELLYFISH = ITEMS.register("brown_fungal_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.BROWN_FUNGAL_JELLYFISH.get()));
+
+
+
 
 
 

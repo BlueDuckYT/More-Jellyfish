@@ -31,6 +31,11 @@ public class MoreJellyfishEntities {
     public static final RegistryObject<EntityType<RedstoneJellyfishEntity>> REDSTONE_JELLYFISH = ENTITIES.register("redstone_jellyfish", () -> EntityType.Builder.<RedstoneJellyfishEntity>create(RedstoneJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/redstone_jellyfish.png").toString()));
     public static final RegistryObject<EntityType<LapisLazuliJellyfishEntity>> LAPIS_LAZULI_JELLYFISH = ENTITIES.register("lapis_lazuli_jellyfish", () -> EntityType.Builder.<LapisLazuliJellyfishEntity>create(LapisLazuliJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/lapis_lazuli_jellyfish.png").toString()));
     public static final RegistryObject<EntityType<SlimeJellyfishEntity>> SLIME_JELLYFISH = ENTITIES.register("slime_jellyfish", () -> EntityType.Builder.<SlimeJellyfishEntity>create(SlimeJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/slime_jellyfish.png").toString()));
+    public static final RegistryObject<EntityType<SpongeJellyfishEntity>> SPONGE_JELLYFISH = ENTITIES.register("sponge_jellyfish", () -> EntityType.Builder.<SpongeJellyfishEntity>create(SpongeJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/sponge_jellyfish.png").toString()));
+    public static final RegistryObject<EntityType<GlowstoneJellyfishEntity>> GLOWSTONE_JELLYFISH = ENTITIES.register("glowstone_jellyfish", () -> EntityType.Builder.<GlowstoneJellyfishEntity>create(GlowstoneJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/slime_jellyfish.png").toString()));
+    public static final RegistryObject<EntityType<QuartzJellyfishEntity>> QUARTZ_JELLYFISH = ENTITIES.register("quartz_jellyfish", () -> EntityType.Builder.<QuartzJellyfishEntity>create(QuartzJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/slime_jellyfish.png").toString()));
+    public static final RegistryObject<EntityType<RedFungalJellyfishEntity>> RED_FUNGAL_JELLYFISH = ENTITIES.register("red_fungal_jellyfish", () -> EntityType.Builder.<RedFungalJellyfishEntity>create(RedFungalJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/slime_jellyfish.png").toString()));
+    public static final RegistryObject<EntityType<BrownFungalJellyfishEntity>> BROWN_FUNGAL_JELLYFISH = ENTITIES.register("brown_fungal_jellyfish", () -> EntityType.Builder.<BrownFungalJellyfishEntity>create(BrownFungalJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/slime_jellyfish.png").toString()));
 
 
 
@@ -66,6 +71,21 @@ public class MoreJellyfishEntities {
         });
         RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.SLIME_JELLYFISH.get(), (manager) -> {
             return new SlimeJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.QUARTZ_JELLYFISH.get(), (manager) -> {
+            return new QuartzJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.GLOWSTONE_JELLYFISH.get(), (manager) -> {
+            return new GlowstoneJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.SPONGE_JELLYFISH.get(), (manager) -> {
+            return new SpongeJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.RED_FUNGAL_JELLYFISH.get(), (manager) -> {
+            return new RedFungalJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.BROWN_FUNGAL_JELLYFISH.get(), (manager) -> {
+            return new BrownFungalJellyfishRenderer(manager);
         });
     }
 }

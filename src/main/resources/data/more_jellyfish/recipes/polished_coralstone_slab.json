@@ -5,11 +5,11 @@
   ],
   "key": {
     "#": {
-      "item": "more_jellyfisj:deep_polished_coralstone"
+      "item": "more_jellyfish:deep_polished_coralstone"
     }
   },
   "result": {
-    "item": "more_jellyfisj:polished_deep_coralstone_slab",
+    "item": "more_jellyfish:polished_deep_coralstone_slab",
     "count": 6
   }
 }

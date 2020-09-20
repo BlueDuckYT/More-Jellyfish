@@ -1,0 +1,31 @@
+{
+  "parent": "jellyfishing:jellyfishing/root",
+  "display": {
+    "icon": {
+      "item": "more_jellyfish:deep_coralstone"
+    },
+    "title": {
+      "translate": "advancements.more_jellyfish.rock_bottom.title"
+    },
+    "description": {
+      "translate": "advancements.more_jellyfish.rock_bottom.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "net": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "more_jellyfish:rock_bottom"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "net"
+    ]
+  ]
+}

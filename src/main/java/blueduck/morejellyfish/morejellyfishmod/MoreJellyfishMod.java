@@ -9,6 +9,7 @@ import blueduck.jellyfishing.jellyfishingmod.items.JellyfishingSpawnEgg;
 import blueduck.jellyfishing.jellyfishingmod.registry.*;
 import blueduck.morejellyfish.morejellyfishmod.client.renderer.*;
 import blueduck.morejellyfish.morejellyfishmod.entity.MoreJellyfishSpawnEgg;
+import blueduck.morejellyfish.morejellyfishmod.misc.RockBottom;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishBiomes;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishBlocks;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishEntities;
@@ -102,9 +103,17 @@ public class MoreJellyfishMod {
         ((JellyfishFields) JellyfishingBiomes.JELLYFISH_FIELDS.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 5, 1, 1));
 
 
+        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 5, 1, 1));
+
+
 
         Biomes.SWAMP.getSpawns(EntityClassification.WATER_CREATURE).add(new Biome.SpawnListEntry(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 10, 1, 1));
         Biomes.BADLANDS.getSpawns(EntityClassification.WATER_CREATURE).add(new Biome.SpawnListEntry(MoreJellyfishEntities.GOLD_JELLYFISH.get(), 10, 1, 1));
+
+        Biomes.COLD_OCEAN.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 30)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 256))));
+        Biomes.FROZEN_OCEAN.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 30)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 256))));
+        Biomes.DEEP_COLD_OCEAN.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 30)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 256))));
+        Biomes.DEEP_FROZEN_OCEAN.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 30)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 256))));
 
 
         MoreJellyfishBiomes.ROCK_BOTTOM.get().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 50)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(250, 20, 0, 60))));
