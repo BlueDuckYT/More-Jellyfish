@@ -13,6 +13,8 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -46,7 +48,7 @@ public class MoreJellyfishEntities {
         ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
-
+    @OnlyIn(Dist.CLIENT)
     public static void registerRenderer() {
         RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), (manager) -> {
             return new DiamondJellyfishRenderer(manager);

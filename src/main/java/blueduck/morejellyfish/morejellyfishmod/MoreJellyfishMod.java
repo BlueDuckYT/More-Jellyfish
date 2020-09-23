@@ -236,12 +236,18 @@ public class MoreJellyfishMod {
         @SubscribeEvent
         public static void villagerTrades(final VillagerTradesEvent event) {
             if (event.getType() == VillagerProfession.FISHERMAN) {
+                event.getTrades().get(4).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.BROWN_FUNGAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 3, 10, 0.05F));
+                event.getTrades().get(4).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.RED_FUNGAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 3, 10, 0.05F));
+                event.getTrades().get(4).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.GLOWSTONE_JELLYFISH.get()), new ItemStack(Items.EMERALD, 3), 3, 10, 0.05F));
+
                 event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.DIAMOND_JELLYFISH.get()), new ItemStack(Items.EMERALD, 10), 3, 10, 0.05F));
                 event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.REDSTONE_JELLYFISH.get()), new ItemStack(Items.EMERALD, 4), 3, 10, 0.05F));
                 event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.IRON_JELLYFISH.get()), new ItemStack(Items.EMERALD, 3), 3, 10, 0.05F));
                 event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.GOLD_JELLYFISH.get()), new ItemStack(Items.EMERALD, 5), 3, 10, 0.05F));
                 event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.COAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 3, 10, 0.05F));
                 event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.EMERALD_JELLYFISH.get()), new ItemStack(Items.EMERALD, 5), 3, 10, 0.05F));
+                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.LAPIS_LAZULI_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 3, 10, 0.05F));
+
             }
             if (event.getType() == VillagerProfession.MASON) {
                 event.getTrades().get(3).add((entity, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), new ItemStack(MoreJellyfishBlocks.POLISHED_DEEP_CORALSTONE_ITEM.get(), 4), 5, 10, 0.05F));
