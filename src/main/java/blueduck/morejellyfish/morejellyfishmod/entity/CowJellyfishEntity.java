@@ -10,8 +10,8 @@ import net.minecraft.item.Items;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.world.World;
 
-public class HoneyJellyfishEntity extends AbstractJellyfishEntity {
-    public HoneyJellyfishEntity(EntityType<? extends AbstractFishEntity> type, World worldIn) {
-        super(type, worldIn, new ItemStack((IItemProvider) MoreJellyfishItems.HONEY_JELLYFISH.get(), 1), (Item) MoreJellyfishItems.HONEY_BALL.get(), 1.0D, true, 200, 5, 0.4D, 0.6D, 0.25D);
+public class CowJellyfishEntity extends AbstractJellyfishEntity {
+    public CowJellyfishEntity(EntityType<? extends AbstractFishEntity> type, World worldIn) {
+        super(type, worldIn, new ItemStack((IItemProvider) MoreJellyfishItems.COW_JELLYFISH.get(), 1), (Item) MoreJellyfishItems.GELATINOUS_MILK.get(), 1.0D, false, 300, 4, 0.4D, 0.05D, 0.15D, 100);
     }
 }

@@ -115,17 +115,17 @@ public class GuardianJellyfishModel extends EntityModel<GuardianJellyfishEntity>
 
 		float rotateVal = ageInTicks * 0.1F;
 
-		tentacle1.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
-		tentacle1.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
-
 		tentacle2.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
-		tentacle2.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
+		tentacle2.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
 
-		tentacle3.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
-		tentacle3.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
+		tentacle1.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
+		tentacle1.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
 
 		tentacle4.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
-		tentacle4.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
+		tentacle4.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
+
+		tentacle3.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
+		tentacle3.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
 
 	}
 

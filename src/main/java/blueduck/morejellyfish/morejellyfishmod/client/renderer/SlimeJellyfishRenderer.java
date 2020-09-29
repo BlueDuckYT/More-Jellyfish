@@ -4,6 +4,7 @@ import blueduck.morejellyfish.morejellyfishmod.client.model.SlimeJellyfishModel;
 import blueduck.morejellyfish.morejellyfishmod.entity.SlimeJellyfishEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
@@ -27,7 +28,8 @@ public class SlimeJellyfishRenderer extends MobRenderer<SlimeJellyfishEntity, Sl
 
     @Override
     public void render(SlimeJellyfishEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
-        RenderSystem.blendFunc(SRC_ALPHA, ONE_MINUS_SRC_ALPHA);
+        ResourceLocation texture = new ResourceLocation("more_jellyfish", "textures/entity/slime_jellyfish");
+        IVertexBuilder ivertexbuilder = bufferIn.getBuffer(RenderType.getEntityTranslucent(texture));
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 }

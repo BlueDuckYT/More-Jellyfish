@@ -6,12 +6,15 @@ package blueduck.morejellyfish.morejellyfishmod.client.model;// Made with Blockb
 import blueduck.morejellyfish.morejellyfishmod.entity.SlimeJellyfishEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.LivingRenderer;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
 public class SlimeJellyfishModel extends EntityModel<SlimeJellyfishEntity> {
-	private final ModelRenderer body;
+	public final ModelRenderer body;
 	private final ModelRenderer tentacle1;
 	private final ModelRenderer tentacle2;
 	private final ModelRenderer tentacle3;
@@ -60,14 +63,14 @@ public class SlimeJellyfishModel extends EntityModel<SlimeJellyfishEntity> {
 
 		float rotateVal = ageInTicks * 0.1F;
 
-		tentacle1.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
-		tentacle1.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
+		tentacle3.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
+		tentacle3.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
 
 		tentacle2.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
 		tentacle2.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
 
-		tentacle3.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
-		tentacle3.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
+		tentacle1.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
+		tentacle1.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * 0.5F;
 
 		tentacle4.rotateAngleX = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
 		tentacle4.rotateAngleZ = Math.abs(MathHelper.sin(rotateVal)) * -0.5F;
