@@ -27,6 +27,11 @@ public class MoreJellyfishItems {
     public static final RegistryObject<Item> QUARTZ_JELLYFISH_SPAWN_EGG = ITEMS.register("quartz_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.QUARTZ_JELLYFISH.get(),16777065, 16757097, new Item.Properties().group(ItemGroup.MISC)));
     public static final RegistryObject<Item> RED_FUNGAL_JELLYFISH_SPAWN_EGG = ITEMS.register("red_fungal_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.RED_FUNGAL_JELLYFISH.get(),16716800, 16770269, new Item.Properties().group(ItemGroup.MISC)));
     public static final RegistryObject<Item> BROWN_FUNGAL_JELLYFISH_SPAWN_EGG = ITEMS.register("brown_fungal_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.BROWN_FUNGAL_JELLYFISH.get(),10513224, 7367496, new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> CLAY_JELLYFISH_SPAWN_EGG = ITEMS.register("clay_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.CLAY_JELLYFISH.get(),3347, 2632492, new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> HONEY_JELLYFISH_SPAWN_EGG = ITEMS.register("honey_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.HONEY_JELLYFISH.get(),3347, 2632492, new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> CREEPER_JELLYFISH_SPAWN_EGG = ITEMS.register("creeper_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.CREEPER_JELLYFISH.get(),3347, 2632492, new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> GUARDIAN_JELLYFISH_SPAWN_EGG = ITEMS.register("guardian_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.GUARDIAN_JELLYFISH.get(),3347, 2632492, new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> SKELLYFISH_SPAWN_EGG = ITEMS.register("skellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.SKELLYFISH.get(),3347, 2632492, new Item.Properties().group(ItemGroup.MISC)));
 
 
 
@@ -53,6 +58,14 @@ public class MoreJellyfishItems {
     public static final RegistryObject<Item> QUARTZ_JELLYFISH = ITEMS.register("quartz_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.QUARTZ_JELLYFISH.get()));
     public static final RegistryObject<Item> RED_FUNGAL_JELLYFISH = ITEMS.register("red_fungal_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.RED_FUNGAL_JELLYFISH.get()));
     public static final RegistryObject<Item> BROWN_FUNGAL_JELLYFISH = ITEMS.register("brown_fungal_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.BROWN_FUNGAL_JELLYFISH.get()));
+
+    public static final RegistryObject<Item> CLAY_JELLYFISH = ITEMS.register("clay_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.CLAY_JELLYFISH.get()));
+    public static final RegistryObject<Item> HONEY_JELLYFISH = ITEMS.register("honey_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.HONEY_JELLYFISH.get()));
+
+    public static final RegistryObject<Item> CREEPER_JELLYFISH = ITEMS.register("creeper_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.CREEPER_JELLYFISH.get()));
+    public static final RegistryObject<Item> GUARDIAN_JELLYFISH = ITEMS.register("guardian_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.GUARDIAN_JELLYFISH.get()));
+    public static final RegistryObject<Item> SKELLYFISH = ITEMS.register("skellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.SKELLYFISH.get()));
+
 
 
 

@@ -38,6 +38,11 @@
   "item.more_jellyfish.glowstone_jellyfish": "Glowstone Jellyfish",
   "item.more_jellyfish.red_fungal_jellyfish": "Red Fungal Jellyfish",
   "item.more_jellyfish.brown_fungal_jellyfish": "Brown Fungal Jellyfish",
+  "item.more_jellyfish.creeper_jellyfish": "Creeper Jellyfish",
+  "item.more_jellyfish.guardian_jellyfish": "Guardian Jellyfish",
+  "item.more_jellyfish.skellyfish": "Skellyfish",
+  "item.more_jellyfish.honey_jellyfish": "Honey Jellyfish",
+  "item.more_jellyfish.clay_jellyfish": "Clay Jellyfish",
 
   "entity.more_jellyfish.diamond_jellyfish": "Diamond Jellyfish",
   "entity.more_jellyfish.emerald_jellyfish": "Emerald Jellyfish",
@@ -52,6 +57,11 @@
   "entity.more_jellyfish.glowstone_jellyfish": "Glowstone Jellyfish",
   "entity.more_jellyfish.red_fungal_jellyfish": "Red Fungal Jellyfish",
   "entity.more_jellyfish.brown_fungal_jellyfish": "Brown Fungal Jellyfish",
+  "entity.more_jellyfish.creeper_jellyfish": "Creeper Jellyfish",
+  "entity.more_jellyfish.guardian_jellyfish": "Guardian Jellyfish",
+  "entity.more_jellyfish.skellyfish": "Skellyfish",
+  "entity.more_jellyfish.honey_jellyfish": "Honey Jellyfish",
+  "entity.more_jellyfish.clay_jellyfish": "Clay Jellyfish",
 
   "item.more_jellyfish.diamond_jellyfish_spawn_egg": "Diamond Jellyfish Spawn Egg",
   "item.more_jellyfish.emerald_jellyfish_spawn_egg": "Emerald Jellyfish Spawn Egg",
@@ -65,5 +75,10 @@
   "item.more_jellyfish.sponge_jellyfish_spawn_egg": "Sponge Jellyfish Spawn Egg",
   "item.more_jellyfish.glowstone_jellyfish_spawn_egg": "Glowstone Jellyfish Spawn Egg",
   "item.more_jellyfish.red_fungal_jellyfish_spawn_egg": "Red Fungal Jellyfish Spawn Egg",
-  "item.more_jellyfish.brown_fungal_jellyfish_spawn_egg": "Brown Fungal Jellyfish Spawn Egg"
+  "item.more_jellyfish.brown_fungal_jellyfish_spawn_egg": "Brown Fungal Jellyfish Spawn Egg",
+  "item.more_jellyfish.creeper_jellyfish_spawn_egg": "Creeper Jellyfish Spawn Egg",
+  "item.more_jellyfish.guardian_jellyfish_spawn_egg": "Guardian Jellyfish Spawn Egg",
+  "item.more_jellyfish.skellyfish_spawn_egg": "Skellyfish Spawn Egg",
+  "item.more_jellyfish.honey_jellyfish_spawn_egg": "Honey Jellyfish Spawn Egg",
+  "item.more_jellyfish.clay_jellyfish_spawn_egg": "Clay Jellyfish Spawn Egg"
 }
