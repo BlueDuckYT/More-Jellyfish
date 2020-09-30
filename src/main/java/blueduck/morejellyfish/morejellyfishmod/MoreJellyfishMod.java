@@ -105,12 +105,20 @@ public class MoreJellyfishMod {
         ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 10, 1, 1));
         ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), 12, 1, 1));
         ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.QUARTZ_JELLYFISH.get(), 4, 1, 1));
+        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.CLAY_JELLYFISH.get(), 4, 1, 1));
 
         ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.SPONGE_JELLYFISH.get(), 2, 1, 1));
         ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.GLOWSTONE_JELLYFISH.get(), 8, 1, 1));
         ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.RED_FUNGAL_JELLYFISH.get(), 6, 1, 1));
         ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.BROWN_FUNGAL_JELLYFISH.get(), 6, 1, 1));
         ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 3, 1, 1));
+        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.HONEY_JELLYFISH.get(), 3, 1, 1));
+        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.COW_JELLYFISH.get(), 2, 1, 1));
+        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.GUARDIAN_JELLYFISH.get(), 1, 1, 1));
+        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.CREEPER_JELLYFISH.get(), 3, 1, 1));
+
+
+
 
 
 
