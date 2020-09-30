@@ -10,6 +10,8 @@ import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishBlocks;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishEntities;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishItems;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
@@ -135,6 +137,7 @@ public class MoreJellyfishMod {
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
+
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -194,6 +197,7 @@ public class MoreJellyfishMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MoreJellyfishEntities.registerRenderer();
+            RenderTypeLookup.setRenderLayer((Block)MoreJellyfishBlocks.GELATINOUS_MILK_BLOCK.get(), RenderType.getTranslucent());
 
         }
         @SubscribeEvent

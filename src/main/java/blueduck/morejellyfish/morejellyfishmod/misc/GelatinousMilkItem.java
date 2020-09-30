@@ -27,7 +27,8 @@ public class GelatinousMilkItem extends Item {
         if (entityLiving instanceof PlayerEntity && !((PlayerEntity)entityLiving).abilities.isCreativeMode) {
             stack.shrink(1);
         }
-        return new ItemStack(Items.AIR);
+
+        return stack.isEmpty() ? new ItemStack(Items.AIR) : stack;
     }
 
     /**
