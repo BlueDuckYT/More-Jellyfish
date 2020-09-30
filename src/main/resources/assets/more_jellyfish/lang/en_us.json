@@ -48,6 +48,7 @@
   "item.more_jellyfish.skellyfish": "Skellyfish",
   "item.more_jellyfish.honey_jellyfish": "Honey Jellyfish",
   "item.more_jellyfish.clay_jellyfish": "Clay Jellyfish",
+  "item.more_jellyfish.cow_jellyfish": "Cow Jellyfish",
 
   "entity.more_jellyfish.diamond_jellyfish": "Diamond Jellyfish",
   "entity.more_jellyfish.emerald_jellyfish": "Emerald Jellyfish",
@@ -67,6 +68,7 @@
   "entity.more_jellyfish.skellyfish": "Skellyfish",
   "entity.more_jellyfish.honey_jellyfish": "Honey Jellyfish",
   "entity.more_jellyfish.clay_jellyfish": "Clay Jellyfish",
+  "entity.more_jellyfish.cow_jellyfish": "Cow Jellyfish",
 
   "item.more_jellyfish.diamond_jellyfish_spawn_egg": "Diamond Jellyfish Spawn Egg",
   "item.more_jellyfish.emerald_jellyfish_spawn_egg": "Emerald Jellyfish Spawn Egg",
@@ -85,5 +87,6 @@
   "item.more_jellyfish.guardian_jellyfish_spawn_egg": "Guardian Jellyfish Spawn Egg",
   "item.more_jellyfish.skellyfish_spawn_egg": "Skellyfish Spawn Egg",
   "item.more_jellyfish.honey_jellyfish_spawn_egg": "Honey Jellyfish Spawn Egg",
-  "item.more_jellyfish.clay_jellyfish_spawn_egg": "Clay Jellyfish Spawn Egg"
+  "item.more_jellyfish.clay_jellyfish_spawn_egg": "Clay Jellyfish Spawn Egg",
+  "item.more_jellyfish.cow_jellyfish_spawn_egg": "Cow Jellyfish Spawn Egg"
 }
