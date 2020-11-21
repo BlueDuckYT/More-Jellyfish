@@ -21,6 +21,7 @@ public class SlimeJellyfishModel extends EntityModel<SlimeJellyfishEntity> {
 	private final ModelRenderer tentacle4;
 
 	public SlimeJellyfishModel() {
+		super(RenderType::getEntityTranslucent);
 		textureWidth = 24;
 		textureHeight = 24;
 

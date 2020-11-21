@@ -5,6 +5,7 @@ import blueduck.morejellyfish.morejellyfishmod.entity.HoneyJellyfishEntity;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.util.math.MathHelper;
@@ -24,6 +25,7 @@ public class HoneyJellyfishModel extends EntityModel<HoneyJellyfishEntity> {
     public ModelRenderer tentacle4;
 
     public HoneyJellyfishModel() {
+        super(RenderType::getEntityTranslucent);
         this.textureWidth = 24;
         this.textureHeight = 12;
         this.tentacle3 = new ModelRenderer(this, 0, 0);
