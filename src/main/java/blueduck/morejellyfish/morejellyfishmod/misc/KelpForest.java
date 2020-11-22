@@ -33,7 +33,7 @@ public class KelpForest extends JellyfishingBiome {
     static final net.minecraft.world.biome.BiomeGenerationSettings.Builder GENERATION_SETTINGS = (new net.minecraft.world.biome.BiomeGenerationSettings.Builder()).withSurfaceBuilder(SURFACE_BUILDER);
 
     public KelpForest() {
-        super(CLIMATE, Biome.Category.OCEAN, -1.4F, .05F, (new net.minecraft.world.biome.BiomeAmbience.Builder()).setWaterColor(692136).setWaterFogColor(604792).setFogColor(692136).withSkyColor(3448555).setMoodSound(MoodSoundAmbience.DEFAULT_CAVE).build(), GENERATION_SETTINGS.build(), SPAWN_SETTINGS.copy());
+        super(CLIMATE, Biome.Category.OCEAN, -1.4F, .05F, (new net.minecraft.world.biome.BiomeAmbience.Builder()).setWaterColor(4159204).setWaterFogColor(329011).setFogColor(12638463).withSkyColor(3448555).setMoodSound(MoodSoundAmbience.DEFAULT_CAVE).build(), GENERATION_SETTINGS.build(), SPAWN_SETTINGS.copy());
         //super(SurfaceBuilder.DEFAULT, new SurfaceBuilderConfig(MoreJellyfishBlocks.DEEP_ALGAE_GRASS.get().getDefaultState(), MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), MoreJellyfishBlocks.DEEP_ALGAE_GRASS.get().getDefaultState())).precipitation(Biome.RainType.RAIN).category(Biome.Category.OCEAN).depth(-1.3F).scale(0.0F).temperature(0.5F).downfall(0.5F).waterColor(692136).waterFogColor(666690).parent((String)null));
 
 //        addCarver(GenerationStage.Carving.LIQUID, Biome.createCarver(WorldCarver.UNDERWATER_CAVE, new ProbabilityConfig(0.2F)));

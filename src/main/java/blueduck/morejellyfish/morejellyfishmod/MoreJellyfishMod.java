@@ -170,7 +170,11 @@ public class MoreJellyfishMod {
 
         @SubscribeEvent
         public static void onBiomeLoad(BiomeLoadingEvent event) {
-            if (event.getName().equals(new ResourceLocation("more_jellyfish:rock_bottom")) || event.getName().equals(new ResourceLocation("more_jellyfish:kelp_forest"))) {
+            if (event.getName().equals(new ResourceLocation("more_jellyfish:rock_bottom"))) {
+                event.getGeneration().withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, MoreJellyfishConfiguredFeatures.CONFIGURED_UNCOMMON_CORAL_PLANT);
+                event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, MoreJellyfishConfiguredFeatures.CONFIGURED_DEEP_CORALSTONE_REPLACEMENT);
+            }
+            else if ( event.getName().equals(new ResourceLocation("more_jellyfish:kelp_forest"))) {
                 event.getGeneration().withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, JellyfishingConfiguredFeatures.CONFIGURED_CORAL_PLANT);
                 event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, MoreJellyfishConfiguredFeatures.CONFIGURED_DEEP_CORALSTONE_REPLACEMENT);
             }
