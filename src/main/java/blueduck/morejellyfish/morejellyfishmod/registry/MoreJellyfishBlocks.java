@@ -17,8 +17,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class MoreJellyfishBlocks {
 
-    public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, MoreJellyfishMod.MODID);
-    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, MoreJellyfishMod.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MoreJellyfishMod.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MoreJellyfishMod.MODID);
 
     public static final RegistryObject<Block> DEEP_CORALSTONE = BLOCKS.register("deep_coralstone", () -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.PURPLE).sound(SoundType.STONE).hardnessAndResistance(1.5F, 1F).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
     public static final RegistryObject<Item> DEEP_CORALSTONE_ITEM = ITEMS.register("deep_coralstone", () -> new BlockItemBase(DEEP_CORALSTONE.get()));
@@ -44,7 +44,7 @@ public class MoreJellyfishBlocks {
     public static final RegistryObject<Block> DEEP_ALGAE_GRASS = BLOCKS.register("deep_algae_grass", () -> new AlgaeGrassBlock(Block.Properties.create(Material.EARTH, MaterialColor.LIME).sound(SoundType.WET_GRASS).hardnessAndResistance(1F, 1F).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
     public static final RegistryObject<Item> DEEP_ALGAE_GRASS_ITEM = ITEMS.register("deep_algae_grass", () -> new BlockItemBase(DEEP_ALGAE_GRASS.get()));
 
-    public static final RegistryObject<Block> GELATINOUS_MILK_BLOCK = BLOCKS.register("gelatinous_milk_block", () -> new JellyBlock(Block.Properties.create(Material.CLAY, MaterialColor.ADOBE).speedFactor(0.4F).jumpFactor(0.5F).notSolid().sound(SoundType.field_226947_m_)));
+    public static final RegistryObject<Block> GELATINOUS_MILK_BLOCK = BLOCKS.register("gelatinous_milk_block", () -> new JellyBlock(Block.Properties.create(Material.CLAY, MaterialColor.ADOBE).speedFactor(0.4F).jumpFactor(0.5F).notSolid().sound(SoundType.HONEY)));
     public static final RegistryObject<Item> GELATINOUS_MILK_BLOCK_ITEM = ITEMS.register("gelatinous_milk_block", () -> new BlockItemBase(GELATINOUS_MILK_BLOCK.get()));
 
 

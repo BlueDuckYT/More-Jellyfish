@@ -23,7 +23,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class MoreJellyfishEntities {
 
-    public static final DeferredRegister<EntityType<?>> ENTITIES = new DeferredRegister<>(ForgeRegistries.ENTITIES, MoreJellyfishMod.MODID);
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, MoreJellyfishMod.MODID);
 
     public static final RegistryObject<EntityType<DiamondJellyfishEntity>> DIAMOND_JELLYFISH = ENTITIES.register("diamond_jellyfish", () -> EntityType.Builder.<DiamondJellyfishEntity>create(DiamondJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/diamond_jellyfish.png").toString()));
     public static final RegistryObject<EntityType<EmeraldJellyfishEntity>> EMERALD_JELLYFISH = ENTITIES.register("emerald_jellyfish", () -> EntityType.Builder.<EmeraldJellyfishEntity>create(EmeraldJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/emerald_jellyfish.png").toString()));
@@ -44,6 +44,7 @@ public class MoreJellyfishEntities {
     public static final RegistryObject<EntityType<SkellyfishEntity>> SKELLYFISH = ENTITIES.register("skellyfish", () -> EntityType.Builder.<SkellyfishEntity>create(SkellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/sponge_jellyfish.png").toString()));
     public static final RegistryObject<EntityType<HoneyJellyfishEntity>> HONEY_JELLYFISH = ENTITIES.register("honey_jellyfish", () -> EntityType.Builder.<HoneyJellyfishEntity>create(HoneyJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.4F).build(new ResourceLocation("more_jellyfish", "textures/entities/sponge_jellyfish.png").toString()));
     public static final RegistryObject<EntityType<CowJellyfishEntity>> COW_JELLYFISH = ENTITIES.register("cow_jellyfish", () -> EntityType.Builder.<CowJellyfishEntity>create(CowJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.9F, 0.5F).build(new ResourceLocation("more_jellyfish", "textures/entities/sponge_jellyfish.png").toString()));
+    public static final RegistryObject<EntityType<NetheriteJellyfishEntity>> NETHERITE_JELLYFISH = null;//ENTITIES.register("netherire_jellyfish", () -> EntityType.Builder.<NetheriteJellyfishEntity>create(NetheriteJellyfishEntity::new, EntityClassification.WATER_CREATURE).size(0.9F, 0.5F).build(new ResourceLocation("more_jellyfish", "textures/entities/sponge_jellyfish.png").toString()));
 
 
 
@@ -112,6 +113,9 @@ public class MoreJellyfishEntities {
         });
         RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.COW_JELLYFISH.get(), (manager) -> {
             return new CowJellyfishRenderer(manager);
+        });
+        RenderingRegistry.registerEntityRenderingHandler((EntityType) MoreJellyfishEntities.NETHERITE_JELLYFISH.get(), (manager) -> {
+            return new NetheriteJellyfishRenderer(manager);
         });
     }
 }

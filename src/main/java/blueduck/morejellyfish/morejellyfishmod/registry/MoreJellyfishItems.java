@@ -14,7 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class MoreJellyfishItems {
 
-    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, MoreJellyfishMod.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MoreJellyfishMod.MODID);
 
     public static final RegistryObject<Item> DIAMOND_JELLYFISH_SPAWN_EGG = ITEMS.register("diamond_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.DIAMOND_JELLYFISH.get(),3130874, 3145722, new Item.Properties().group(ItemGroup.MISC)));
     public static final RegistryObject<Item> EMERALD_JELLYFISH_SPAWN_EGG = ITEMS.register("emerald_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.EMERALD_JELLYFISH.get(),3145495, 3145544, new Item.Properties().group(ItemGroup.MISC)));
@@ -35,6 +35,7 @@ public class MoreJellyfishItems {
     public static final RegistryObject<Item> GUARDIAN_JELLYFISH_SPAWN_EGG = ITEMS.register("guardian_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.GUARDIAN_JELLYFISH.get(),2640895, 16744495, new Item.Properties().group(ItemGroup.MISC)));
     public static final RegistryObject<Item> SKELLYFISH_SPAWN_EGG = ITEMS.register("skellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.SKELLYFISH.get(),13881047, 2236710, new Item.Properties().group(ItemGroup.MISC)));
     public static final RegistryObject<Item> COW_JELLYFISH_SPAWN_EGG = ITEMS.register("cow_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.COW_JELLYFISH.get(),13948116, 4076073, new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> NETHERITE_JELLYFISH_SPAWN_EGG = null;//ITEMS.register("netherite_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.NETHERITE_JELLYFISH.get(),4668474, 6306874, new Item.Properties().group(ItemGroup.MISC)));
 
 
 
@@ -46,6 +47,8 @@ public class MoreJellyfishItems {
 
 
     public static final RegistryObject<Item> SPONGE_CHUNK = ITEMS.register("sponge_chunk", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+
+    public static final RegistryObject<Item> NETHERITE_CHUNK = ITEMS.register("netherite_chunk", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
 
     public static final RegistryObject<Item> DIAMOND_JELLYFISH = ITEMS.register("diamond_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.DIAMOND_JELLYFISH.get()));
     public static final RegistryObject<Item> EMERALD_JELLYFISH = ITEMS.register("emerald_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.EMERALD_JELLYFISH.get()));
@@ -69,6 +72,8 @@ public class MoreJellyfishItems {
     public static final RegistryObject<Item> GUARDIAN_JELLYFISH = ITEMS.register("guardian_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.GUARDIAN_JELLYFISH.get()));
     public static final RegistryObject<Item> SKELLYFISH = ITEMS.register("skellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.SKELLYFISH.get()));
     public static final RegistryObject<Item> COW_JELLYFISH = ITEMS.register("cow_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.COW_JELLYFISH.get()));
+
+    public static final RegistryObject<Item> NETHERITE_JELLYFISH = null;//ITEMS.register("netherite_jellyfish", () -> new JellyfishItem(new Item.Properties().group(ItemGroup.MATERIALS),  () -> MoreJellyfishEntities.NETHERITE_JELLYFISH.get()));
 
     public static final RegistryObject<Item> HONEY_BALL = ITEMS.register("honey_ball", () -> new Item(new Item.Properties().food(Foods.HONEY).group(ItemGroup.FOOD)));
     public static final RegistryObject<Item> GELATINOUS_MILK = ITEMS.register("gelatinous_milk", () -> new GelatinousMilkItem(new Item.Properties().food(Foods.HONEY).group(ItemGroup.FOOD)));

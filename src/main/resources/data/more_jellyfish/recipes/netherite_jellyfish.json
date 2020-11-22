@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "more_jellyfish:diamond_jellyfish"
+  },
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "result": {
+    "item": "more_jellyfish:netherite_jellyfish"
+  }
+}

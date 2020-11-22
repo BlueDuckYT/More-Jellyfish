@@ -1,24 +1,30 @@
 package blueduck.morejellyfish.morejellyfishmod;
 
+import blueduck.jellyfishing.jellyfishingmod.JellyfishingMod;
 import blueduck.jellyfishing.jellyfishingmod.biomes.JellyfishFields;
+import blueduck.jellyfishing.jellyfishingmod.entities.AbstractJellyfishEntity;
 import blueduck.jellyfishing.jellyfishingmod.registry.*;
+import blueduck.morejellyfish.morejellyfishmod.entity.EmeraldJellyfishEntity;
 import blueduck.morejellyfish.morejellyfishmod.misc.MoreJellyfishSpawnEgg;
 import blueduck.morejellyfish.morejellyfishmod.misc.KelpForest;
 import blueduck.morejellyfish.morejellyfishmod.misc.RockBottom;
-import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishBiomes;
-import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishBlocks;
-import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishEntities;
-import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishItems;
+import blueduck.morejellyfish.morejellyfishmod.registry.*;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.MerchantOffer;
 import net.minecraft.item.SpawnEggItem;
+import net.minecraft.loot.LootEntry;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTables;
+import net.minecraft.loot.TableLootEntry;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
@@ -26,22 +32,18 @@ import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.placement.CountConfig;
-import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.Placement;
-import net.minecraft.world.storage.loot.LootEntry;
-import net.minecraft.world.storage.loot.LootPool;
-import net.minecraft.world.storage.loot.LootTables;
-import net.minecraft.world.storage.loot.TableLootEntry;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -86,60 +88,9 @@ public class MoreJellyfishMod {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        ((JellyfishFields) JellyfishingBiomes.JELLYFISH_FIELDS.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), 1, 1, 1));
-        ((JellyfishFields) JellyfishingBiomes.JELLYFISH_FIELDS.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.EMERALD_JELLYFISH.get(), 2, 1, 1));
-        ((JellyfishFields) JellyfishingBiomes.JELLYFISH_FIELDS.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.IRON_JELLYFISH.get(), 5, 1, 1));
-        ((JellyfishFields) JellyfishingBiomes.JELLYFISH_FIELDS.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.GOLD_JELLYFISH.get(), 3, 1, 1));
-        ((JellyfishFields) JellyfishingBiomes.JELLYFISH_FIELDS.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.COAL_JELLYFISH.get(), 3, 1, 1));
-        ((JellyfishFields) JellyfishingBiomes.JELLYFISH_FIELDS.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), 5, 1, 1));
-        ((JellyfishFields) JellyfishingBiomes.JELLYFISH_FIELDS.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 3, 1, 1));
-        ((JellyfishFields) JellyfishingBiomes.JELLYFISH_FIELDS.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 3, 1, 1));
-
-
-        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 3, 1, 1));
-        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), 1, 1, 1));
-        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.EMERALD_JELLYFISH.get(), 2, 1, 1));
-        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.GOLD_JELLYFISH.get(), 15, 1, 1));
-        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.IRON_JELLYFISH.get(), 20, 1, 1));
-        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.COAL_JELLYFISH.get(), 20, 1, 1));
-        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 10, 1, 1));
-        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), 12, 1, 1));
-        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.QUARTZ_JELLYFISH.get(), 4, 1, 1));
-        ((RockBottom) MoreJellyfishBiomes.ROCK_BOTTOM.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.CLAY_JELLYFISH.get(), 4, 1, 1));
-
-        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.SPONGE_JELLYFISH.get(), 2, 1, 1));
-        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.GLOWSTONE_JELLYFISH.get(), 8, 1, 1));
-        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.RED_FUNGAL_JELLYFISH.get(), 6, 1, 1));
-        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.BROWN_FUNGAL_JELLYFISH.get(), 6, 1, 1));
-        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 3, 1, 1));
-        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.HONEY_JELLYFISH.get(), 3, 1, 1));
-        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.COW_JELLYFISH.get(), 2, 1, 1));
-        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.GUARDIAN_JELLYFISH.get(), 1, 1, 1));
-        ((KelpForest) MoreJellyfishBiomes.KELP_FOREST.get()).addCreatureSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(MoreJellyfishEntities.CREEPER_JELLYFISH.get(), 3, 1, 1));
-
-
-
-
-
-
-
-        Biomes.SWAMP.getSpawns(EntityClassification.WATER_CREATURE).add(new Biome.SpawnListEntry(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 10, 1, 1));
-        Biomes.BADLANDS.getSpawns(EntityClassification.WATER_CREATURE).add(new Biome.SpawnListEntry(MoreJellyfishEntities.GOLD_JELLYFISH.get(), 10, 1, 1));
-        Biomes.MUSHROOM_FIELDS.getSpawns(EntityClassification.WATER_CREATURE).add(new Biome.SpawnListEntry(MoreJellyfishEntities.RED_FUNGAL_JELLYFISH.get(), 3, 1, 1));
-        Biomes.MUSHROOM_FIELDS.getSpawns(EntityClassification.WATER_CREATURE).add(new Biome.SpawnListEntry(MoreJellyfishEntities.BROWN_FUNGAL_JELLYFISH.get(), 3, 1, 1));
-        Biomes.MUSHROOM_FIELD_SHORE.getSpawns(EntityClassification.WATER_CREATURE).add(new Biome.SpawnListEntry(MoreJellyfishEntities.RED_FUNGAL_JELLYFISH.get(), 3, 1, 1));
-        Biomes.MUSHROOM_FIELD_SHORE.getSpawns(EntityClassification.WATER_CREATURE).add(new Biome.SpawnListEntry(MoreJellyfishEntities.BROWN_FUNGAL_JELLYFISH.get(), 3, 1, 1));
-
-        Biomes.COLD_OCEAN.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 30)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 256))));
-        Biomes.FROZEN_OCEAN.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 30)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 256))));
-        Biomes.DEEP_COLD_OCEAN.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 30)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 256))));
-        Biomes.DEEP_FROZEN_OCEAN.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 30)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 256))));
-
-        JellyfishingBiomes.JELLYFISH_FIELDS.get().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 20)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 20, 0, 30))));
-        MoreJellyfishBiomes.ROCK_BOTTOM.get().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 50)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(250, 20, 0, 60))));
-        DefaultBiomeFeatures.addOres(MoreJellyfishBiomes.ROCK_BOTTOM.get());
-        MoreJellyfishBiomes.KELP_FOREST.get().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), 50)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(250, 35, 0, 60))));
-        DefaultBiomeFeatures.addOres(MoreJellyfishBiomes.KELP_FOREST.get());
+        for (RegistryObject<EntityType<?>> ENTITY: MoreJellyfishEntities.ENTITIES.getEntries()) {
+            GlobalEntityTypeAttributes.put((EntityType<? extends LivingEntity>) ENTITY.get(), AbstractJellyfishEntity.func_234176_m_().create()/*(or your own)*/);
+        }
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -182,9 +133,6 @@ public class MoreJellyfishMod {
         @SubscribeEvent
         public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
             MoreJellyfishBiomes.registerBiomes();
-            MoreJellyfishBiomes.ROCK_BOTTOM.get().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, JellyfishingFeatures.CORAL_PLANT_FEATURE.withConfiguration(new CountConfig(1)));
-            MoreJellyfishBiomes.KELP_FOREST.get().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, JellyfishingFeatures.CORAL_PLANT_FEATURE.withConfiguration(new CountConfig(1)));
-            MoreJellyfishBiomes.KELP_FOREST.get().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, JellyfishingFeatures.TUBE_PLANT_FEATURE.withConfiguration(new CountConfig(1)));
         }
     }
 
@@ -218,12 +166,21 @@ public class MoreJellyfishMod {
 
     @Mod.EventBusSubscriber(modid = "more_jellyfish")
     public static class LootEvents {
+
+        @SubscribeEvent
+        public static void onBiomeLoad(BiomeLoadingEvent event) {
+            if (event.getName().equals(new ResourceLocation("more_jellyfish:rock_bottom")) || event.getName().equals(new ResourceLocation("more_jellyfish:kelp_forest"))) {
+                event.getGeneration().withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, JellyfishingConfiguredFeatures.CONFIGURED_CORAL_PLANT);
+                event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, MoreJellyfishConfiguredFeatures.CONFIGURED_DEEP_CORALSTONE_REPLACEMENT);
+            }
+        }
+
         @SubscribeEvent
         public static void onLootLoad(LootTableLoadEvent event) throws IllegalAccessException {
 
             //Fishing Loot Injection from Aquaculture 2 by Team Metallurgy
             ResourceLocation name = event.getName();
-            if (name.equals(LootTables.GAMEPLAY_FISHING)) {
+            if (JellyfishingMod.CONFIG.JELLYFISH_FISHABLE.get() && name.equals(LootTables.GAMEPLAY_FISHING)) {
                 LootPool pool = event.getTable().getPool("main");
                 if (pool != null) {
                     addEntry(pool, getInjectEntry(new ResourceLocation("more_jellyfish:gameplay/more_jellyfish"), 1, 2));

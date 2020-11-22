@@ -1,33 +1,54 @@
 package blueduck.morejellyfish.morejellyfishmod.misc;
 
+import blueduck.jellyfishing.jellyfishingmod.biomes.JellyfishingBiome;
 import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingBlocks;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishBlocks;
+import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishEntities;
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.world.biome.MobSpawnInfo;
+import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
+import net.minecraft.world.gen.feature.structure.StructureFeatures;
+import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
+import org.lwjgl.system.CallbackI;
 
-public class RockBottom extends Biome {
+public class RockBottom extends JellyfishingBiome {
+
+    static final ConfiguredSurfaceBuilder<?> SURFACE_BUILDER = (ConfiguredSurfaceBuilder) Registry.register(WorldGenRegistries.CONFIGURED_SURFACE_BUILDER, "more_jellyfish:rock_bottom", new ConfiguredSurfaceBuilder<>(SurfaceBuilder.DEFAULT, new SurfaceBuilderConfig(((Block) MoreJellyfishBlocks.DEEP_CORALSTONE.get()).getDefaultState(), ((Block)MoreJellyfishBlocks.DEEP_CORALSTONE.get()).getDefaultState(), ((Block)MoreJellyfishBlocks.DEEP_CORALSTONE.get()).getDefaultState())));;
+    static final Biome.Climate CLIMATE = new Biome.Climate(Biome.RainType.RAIN, 0.8F,Biome.TemperatureModifier.NONE, 0.4F);;
+    static final MobSpawnInfo.Builder SPAWN_SETTINGS = (new MobSpawnInfo.Builder()).isValidSpawnBiomeForPlayer();
+    static final net.minecraft.world.biome.BiomeGenerationSettings.Builder GENERATION_SETTINGS = (new net.minecraft.world.biome.BiomeGenerationSettings.Builder()).withSurfaceBuilder(SURFACE_BUILDER);
+
 
     public RockBottom() {
-        super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, new SurfaceBuilderConfig(MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState(), MoreJellyfishBlocks.DEEP_CORALSTONE.get().getDefaultState())).precipitation(Biome.RainType.RAIN).category(Biome.Category.OCEAN).depth(-1.8F).scale(0.4F).temperature(0.5F).downfall(0.5F).waterColor(5478856).waterFogColor(727711).parent((String)null));
-
-        addCarver(GenerationStage.Carving.AIR, Biome.createCarver(WorldCarver.CAVE, new ProbabilityConfig(0.25F)));
-        addCarver(GenerationStage.Carving.AIR, Biome.createCarver(WorldCarver.CANYON, new ProbabilityConfig(0.08F)));
-        addCarver(GenerationStage.Carving.LIQUID, Biome.createCarver(WorldCarver.UNDERWATER_CANYON, new ProbabilityConfig(0.04F)));
-        addCarver(GenerationStage.Carving.LIQUID, Biome.createCarver(WorldCarver.UNDERWATER_CAVE, new ProbabilityConfig(0.1F)));
-
-        DefaultBiomeFeatures.addStructures(this);
-
-
+        super(CLIMATE, Biome.Category.OCEAN, -1.8F, .25F, (new net.minecraft.world.biome.BiomeAmbience.Builder()).setWaterColor(692136).setWaterFogColor(604792).setFogColor(692136).withSkyColor(3448555).setMoodSound(MoodSoundAmbience.DEFAULT_CAVE).build(), GENERATION_SETTINGS.build(), SPAWN_SETTINGS.copy());
     }
 
-    public void addCreatureSpawn(EntityClassification classification, Biome.SpawnListEntry entry) {
-        this.addSpawn(classification, entry);
+
+    static {
+        GENERATION_SETTINGS.withStructure(StructureFeatures.RUINED_PORTAL_OCEAN);
+
+        DefaultBiomeFeatures.withOverworldOres(GENERATION_SETTINGS);
+
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), 1, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.IRON_JELLYFISH.get(), 20, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.GOLD_JELLYFISH.get(), 15, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.EMERALD_JELLYFISH.get(), 2, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.COAL_JELLYFISH.get(), 20, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 8, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), 8, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.QUARTZ_JELLYFISH.get(), 4, 1, 1));
+
     }
 
 }
