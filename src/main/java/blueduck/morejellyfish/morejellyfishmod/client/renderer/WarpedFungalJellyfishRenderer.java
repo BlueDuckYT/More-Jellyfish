@@ -10,7 +10,7 @@ public class WarpedFungalJellyfishRenderer extends MobRenderer<WarpedFungalJelly
 
     public WarpedFungalJellyfishRenderer(EntityRendererManager renderManagerIn) {
         super(renderManagerIn, new WarpedFungalJellyfishModel(), 0.3F);
-        //this.addLayer(new WarpedJellyfishGlowLayer(this));
+        this.addLayer(new WarpedJellyfishGlowLayer(this));
     }
 
     @Override

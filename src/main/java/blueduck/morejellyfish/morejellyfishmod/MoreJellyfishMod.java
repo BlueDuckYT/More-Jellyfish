@@ -29,6 +29,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
@@ -172,6 +173,18 @@ public class MoreJellyfishMod {
             if (event.getName().equals(new ResourceLocation("more_jellyfish:rock_bottom")) || event.getName().equals(new ResourceLocation("more_jellyfish:kelp_forest"))) {
                 event.getGeneration().withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, JellyfishingConfiguredFeatures.CONFIGURED_CORAL_PLANT);
                 event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, MoreJellyfishConfiguredFeatures.CONFIGURED_DEEP_CORALSTONE_REPLACEMENT);
+            }
+            if (event.getName().equals(new ResourceLocation("jellyfishing:jellyfish_fields"))) {
+                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), 1, 1, 1));
+                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.EMERALD_JELLYFISH.get(), 3, 1, 1));
+                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.IRON_JELLYFISH.get(), 8, 1, 1));
+                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.GOLD_JELLYFISH.get(), 8, 1, 1));
+                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), 5, 1, 1));
+                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 4, 1, 1));
+                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.COAL_JELLYFISH.get(), 8, 1, 1));
+                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 2, 1, 1));
+                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.HONEY_JELLYFISH.get(), 5, 1, 1));
+
             }
         }
 

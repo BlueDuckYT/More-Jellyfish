@@ -10,7 +10,7 @@ public class CrimsonFungalJellyfishRenderer extends MobRenderer<CrimsonFungalJel
 
     public CrimsonFungalJellyfishRenderer(EntityRendererManager renderManagerIn) {
         super(renderManagerIn, new CrimsonFungalJellyfishModel(), 0.3F);
-        //this.addLayer(new CrimsonJellyfishGlowLayer(this));
+        this.addLayer(new CrimsonJellyfishGlowLayer(this));
     }
 
     @Override
