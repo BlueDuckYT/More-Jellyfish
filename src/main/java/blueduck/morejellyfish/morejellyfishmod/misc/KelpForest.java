@@ -43,7 +43,7 @@ public class KelpForest extends JellyfishingBiome {
 
     static {
         DefaultBiomeFeatures.withOverworldOres(GENERATION_SETTINGS);
-        DefaultBiomeFeatures.withWarmKelp(GENERATION_SETTINGS);
+        DefaultBiomeFeatures.withColdKelp(GENERATION_SETTINGS);
 
         SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.SPONGE_JELLYFISH.get(), 2, 1, 1));
         SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.GLOWSTONE_JELLYFISH.get(), 8, 1, 1));

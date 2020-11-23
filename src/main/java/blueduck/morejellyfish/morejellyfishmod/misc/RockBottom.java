@@ -22,6 +22,8 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import org.lwjgl.system.CallbackI;
 
+import static blueduck.morejellyfish.morejellyfishmod.MoreJellyfishMod.CONFIG;
+
 public class RockBottom extends JellyfishingBiome {
 
     static final ConfiguredSurfaceBuilder<?> SURFACE_BUILDER = (ConfiguredSurfaceBuilder) Registry.register(WorldGenRegistries.CONFIGURED_SURFACE_BUILDER, "more_jellyfish:rock_bottom", new ConfiguredSurfaceBuilder<>(SurfaceBuilder.DEFAULT, new SurfaceBuilderConfig(((Block) MoreJellyfishBlocks.DEEP_CORALSTONE.get()).getDefaultState(), ((Block)MoreJellyfishBlocks.DEEP_CORALSTONE.get()).getDefaultState(), ((Block)MoreJellyfishBlocks.DEEP_CORALSTONE.get()).getDefaultState())));;
@@ -40,14 +42,22 @@ public class RockBottom extends JellyfishingBiome {
 
         DefaultBiomeFeatures.withOverworldOres(GENERATION_SETTINGS);
 
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), 1, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.IRON_JELLYFISH.get(), 20, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.GOLD_JELLYFISH.get(), 15, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.EMERALD_JELLYFISH.get(), 2, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.COAL_JELLYFISH.get(), 20, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 8, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), 8, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.QUARTZ_JELLYFISH.get(), 4, 1, 1));
+        if (CONFIG.DIAMOND_SPAWN.get())
+            SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), 1, 1, 1));
+        if (CONFIG.IRON_SPAWN.get())
+            SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.IRON_JELLYFISH.get(), 20, 1, 1));
+        if (CONFIG.GOLD_SPAWN.get())
+            SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.GOLD_JELLYFISH.get(), 15, 1, 1));
+        if (CONFIG.EMERALD_SPAWN.get())
+            SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.EMERALD_JELLYFISH.get(), 2, 1, 1));
+        if (CONFIG.COAL_SPAWN.get())
+            SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.COAL_JELLYFISH.get(), 20, 1, 1));
+        if (CONFIG.LAPIS_SPAWN.get())
+            SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 8, 1, 1));
+        if (CONFIG.REDSTONE_SPAWN.get())
+            SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), 8, 1, 1));
+        if (CONFIG.QUARTZ_SPAWN.get())
+            SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.QUARTZ_JELLYFISH.get(), 4, 1, 1));
 
     }
 

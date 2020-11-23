@@ -3,7 +3,10 @@ package blueduck.morejellyfish.morejellyfishmod;
 import blueduck.jellyfishing.jellyfishingmod.JellyfishingMod;
 import blueduck.jellyfishing.jellyfishingmod.biomes.JellyfishFields;
 import blueduck.jellyfishing.jellyfishingmod.entities.AbstractJellyfishEntity;
+import blueduck.jellyfishing.jellyfishingmod.misc.ConfigHelper;
+import blueduck.jellyfishing.jellyfishingmod.misc.JellyfishingConfig;
 import blueduck.jellyfishing.jellyfishingmod.registry.*;
+import blueduck.morejellyfish.morejellyfishmod.config.MoreJellyfishConfig;
 import blueduck.morejellyfish.morejellyfishmod.entity.EmeraldJellyfishEntity;
 import blueduck.morejellyfish.morejellyfishmod.misc.MoreJellyfishSpawnEgg;
 import blueduck.morejellyfish.morejellyfishmod.misc.KelpForest;
@@ -47,6 +50,7 @@ import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -67,7 +71,11 @@ public class MoreJellyfishMod {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
+    public static MoreJellyfishConfig CONFIG;
+
     public MoreJellyfishMod() {
+        CONFIG = ConfigHelper.register(ModConfig.Type.COMMON, MoreJellyfishConfig::new);
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -179,13 +187,20 @@ public class MoreJellyfishMod {
                 event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, MoreJellyfishConfiguredFeatures.CONFIGURED_DEEP_CORALSTONE_REPLACEMENT);
             }
             if (event.getName().equals(new ResourceLocation("jellyfishing:jellyfish_fields"))) {
-                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), 1, 1, 1));
-                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.EMERALD_JELLYFISH.get(), 3, 1, 1));
-                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.IRON_JELLYFISH.get(), 8, 1, 1));
-                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.GOLD_JELLYFISH.get(), 8, 1, 1));
-                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), 5, 1, 1));
-                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 4, 1, 1));
-                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.COAL_JELLYFISH.get(), 8, 1, 1));
+                if (CONFIG.DIAMOND_SPAWN.get())
+                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), 1, 1, 1));
+                if (CONFIG.EMERALD_SPAWN.get())
+                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.EMERALD_JELLYFISH.get(), 3, 1, 1));
+                if (CONFIG.IRON_SPAWN.get())
+                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.IRON_JELLYFISH.get(), 8, 1, 1));
+                if (CONFIG.GOLD_SPAWN.get())
+                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.GOLD_JELLYFISH.get(), 8, 1, 1));
+                if (CONFIG.REDSTONE_SPAWN.get())
+                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), 5, 1, 1));
+                if (CONFIG.LAPIS_SPAWN.get())
+                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 4, 1, 1));
+                if (CONFIG.COAL_SPAWN.get())
+                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.COAL_JELLYFISH.get(), 8, 1, 1));
                 event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 2, 1, 1));
                 event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.HONEY_JELLYFISH.get(), 5, 1, 1));
 
