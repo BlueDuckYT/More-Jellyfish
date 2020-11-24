@@ -14,10 +14,13 @@
     "more_jellyfish:sponge_jellyfish",
     "more_jellyfish:red_fungal_jellyfish",
     "more_jellyfish:brown_fungal_jellyfish",
+    "more_jellyfish:warped_fungal_jellyfish",
+    "more_jellyfish:crimson_fungal_jellyfish",
     "more_jellyfish:cow_jellyfish",
     "more_jellyfish:creeper_jellyfish",
     "more_jellyfish:clay_jellyfish",
     "more_jellyfish:guardian_jellyfish",
-    "more_jellyfish:honey_jellyfish"
+    "more_jellyfish:honey_jellyfish",
+    "more_jellyfish:netherite_jellyfish"
   ]
 }
