@@ -45,19 +45,19 @@ public class KelpForest extends JellyfishingBiome {
         DefaultBiomeFeatures.withOverworldOres(GENERATION_SETTINGS);
         DefaultBiomeFeatures.withColdKelp(GENERATION_SETTINGS);
 
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.SPONGE_JELLYFISH.get(), 2, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.GLOWSTONE_JELLYFISH.get(), 8, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.RED_FUNGAL_JELLYFISH.get(), 3, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.BROWN_FUNGAL_JELLYFISH.get(), 3, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.CRIMSON_FUNGAL_JELLYFISH.get(), 1, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.WARPED_FUNGAL_JELLYFISH.get(), 1, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.SLIME_JELLYFISH.get(), 3, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.HONEY_JELLYFISH.get(), 3, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.COW_JELLYFISH.get(), 1, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.GUARDIAN_JELLYFISH.get(), 1, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.CREEPER_JELLYFISH.get(), 3, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.CLAY_JELLYFISH.get(), 3, 1, 1));
-        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.SKELLYFISH.get(), 3, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.SPONGE_JELLYFISH.get(), 2, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.GLOWSTONE_JELLYFISH.get(), 8, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.RED_FUNGAL_JELLYFISH.get(), 3, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.BROWN_FUNGAL_JELLYFISH.get(), 3, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.CRIMSON_FUNGAL_JELLYFISH.get(), 1, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.WARPED_FUNGAL_JELLYFISH.get(), 1, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.SLIME_JELLYFISH.get(), 3, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.HONEY_JELLYFISH.get(), 3, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.COW_JELLYFISH.get(), 1, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.GUARDIAN_JELLYFISH.get(), 1, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.CREEPER_JELLYFISH.get(), 3, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.CLAY_JELLYFISH.get(), 3, 1, 1));
+        SPAWN_SETTINGS.withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners((EntityType) MoreJellyfishEntities.SKELLYFISH.get(), 3, 1, 1));
 
 
     }

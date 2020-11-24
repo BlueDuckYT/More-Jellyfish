@@ -188,21 +188,21 @@ public class MoreJellyfishMod {
             }
             if (event.getName().equals(new ResourceLocation("jellyfishing:jellyfish_fields"))) {
                 if (CONFIG.DIAMOND_SPAWN.get())
-                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), 1, 1, 1));
+                    event.getSpawns().withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners(MoreJellyfishEntities.DIAMOND_JELLYFISH.get(), 1, 1, 1));
                 if (CONFIG.EMERALD_SPAWN.get())
-                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.EMERALD_JELLYFISH.get(), 3, 1, 1));
+                    event.getSpawns().withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners(MoreJellyfishEntities.EMERALD_JELLYFISH.get(), 3, 1, 1));
                 if (CONFIG.IRON_SPAWN.get())
-                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.IRON_JELLYFISH.get(), 8, 1, 1));
+                    event.getSpawns().withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners(MoreJellyfishEntities.IRON_JELLYFISH.get(), 8, 1, 1));
                 if (CONFIG.GOLD_SPAWN.get())
-                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.GOLD_JELLYFISH.get(), 8, 1, 1));
+                    event.getSpawns().withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners(MoreJellyfishEntities.GOLD_JELLYFISH.get(), 8, 1, 1));
                 if (CONFIG.REDSTONE_SPAWN.get())
-                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), 5, 1, 1));
+                    event.getSpawns().withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners(MoreJellyfishEntities.REDSTONE_JELLYFISH.get(), 5, 1, 1));
                 if (CONFIG.LAPIS_SPAWN.get())
-                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 4, 1, 1));
+                    event.getSpawns().withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners(MoreJellyfishEntities.LAPIS_LAZULI_JELLYFISH.get(), 4, 1, 1));
                 if (CONFIG.COAL_SPAWN.get())
-                    event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.COAL_JELLYFISH.get(), 8, 1, 1));
-                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 2, 1, 1));
-                event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(MoreJellyfishEntities.HONEY_JELLYFISH.get(), 5, 1, 1));
+                    event.getSpawns().withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners(MoreJellyfishEntities.COAL_JELLYFISH.get(), 8, 1, 1));
+                event.getSpawns().withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners(MoreJellyfishEntities.SLIME_JELLYFISH.get(), 2, 1, 1));
+                event.getSpawns().withSpawner(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners(MoreJellyfishEntities.HONEY_JELLYFISH.get(), 5, 1, 1));
 
             }
         }
