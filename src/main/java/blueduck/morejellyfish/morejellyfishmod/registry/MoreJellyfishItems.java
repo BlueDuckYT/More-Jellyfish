@@ -37,7 +37,7 @@ public class MoreJellyfishItems {
     public static final RegistryObject<Item> GUARDIAN_JELLYFISH_SPAWN_EGG = ITEMS.register("guardian_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.GUARDIAN_JELLYFISH.get(),2640895, 16744495, new Item.Properties().group(ItemGroup.MISC)));
     public static final RegistryObject<Item> SKELLYFISH_SPAWN_EGG = ITEMS.register("skellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.SKELLYFISH.get(),13881047, 2236710, new Item.Properties().group(ItemGroup.MISC)));
     public static final RegistryObject<Item> COW_JELLYFISH_SPAWN_EGG = ITEMS.register("cow_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.COW_JELLYFISH.get(),13948116, 4076073, new Item.Properties().group(ItemGroup.MISC)));
-    public static final RegistryObject<Item> NETHERITE_JELLYFISH_SPAWN_EGG = ITEMS.register("netherite_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.NETHERITE_JELLYFISH.get(),4668474, 6306874, new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> NETHERITE_JELLYFISH_SPAWN_EGG = ITEMS.register("netherite_jellyfish_spawn_egg", () -> new MoreJellyfishSpawnEgg(() -> MoreJellyfishEntities.NETHERITE_JELLYFISH.get(),4668474, 6306874, new Item.Properties().group(ItemGroup.MISC).isImmuneToFire()));
 
 
 
