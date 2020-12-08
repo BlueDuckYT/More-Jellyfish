@@ -236,25 +236,38 @@ public class MoreJellyfishMod {
 
         @SubscribeEvent
         public static void villagerTrades(final VillagerTradesEvent event) {
-            if (event.getType() == VillagerProfession.FISHERMAN) {
-                event.getTrades().get(4).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.BROWN_FUNGAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 3, 10, 0.05F));
-                event.getTrades().get(4).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.RED_FUNGAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 3, 10, 0.05F));
-                event.getTrades().get(4).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.GLOWSTONE_JELLYFISH.get()), new ItemStack(Items.EMERALD, 3), 3, 10, 0.05F));
-
-                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.DIAMOND_JELLYFISH.get()), new ItemStack(Items.EMERALD, 10), 3, 10, 0.05F));
-                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.REDSTONE_JELLYFISH.get()), new ItemStack(Items.EMERALD, 4), 3, 10, 0.05F));
-                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.IRON_JELLYFISH.get()), new ItemStack(Items.EMERALD, 3), 3, 10, 0.05F));
-                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.GOLD_JELLYFISH.get()), new ItemStack(Items.EMERALD, 5), 3, 10, 0.05F));
-                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.COAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 3, 10, 0.05F));
-                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.EMERALD_JELLYFISH.get()), new ItemStack(Items.EMERALD, 5), 3, 10, 0.05F));
-                event.getTrades().get(5).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.LAPIS_LAZULI_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 3, 10, 0.05F));
-
-            }
             if (event.getType() == VillagerProfession.MASON) {
                 event.getTrades().get(3).add((entity, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), new ItemStack(MoreJellyfishBlocks.POLISHED_DEEP_CORALSTONE_ITEM.get(), 4), 5, 10, 0.05F));
                 event.getTrades().get(3).add((entity, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), new ItemStack(MoreJellyfishBlocks.DEEP_CORALSTONE_ITEM.get(), 8), 5, 10, 0.05F));
                 event.getTrades().get(3).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishBlocks.DEEP_CORALSTONE_ITEM.get(), 16), new ItemStack(Items.EMERALD, 1), 5, 10, 0.05F));
                 event.getTrades().get(4).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishBlocks.DEEP_CORALSTONE_ITEM.get(), 8), new ItemStack(Items.EMERALD, 1), 5, 10, 0.05F));
+            }
+
+            if (event.getType() == JellyfishingVillagers.FRYCOOK.get()) {
+                event.getTrades().get(1).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.GELATINOUS_MILK.get(), 20), new ItemStack(Items.EMERALD, 1), 8, 10, 0.05F));
+
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.DIAMOND_JELLYFISH.get()), new ItemStack(Items.EMERALD, 16), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.REDSTONE_JELLYFISH.get()), new ItemStack(Items.EMERALD, 3), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.IRON_JELLYFISH.get()), new ItemStack(Items.EMERALD, 1), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.GOLD_JELLYFISH.get()), new ItemStack(Items.EMERALD, 1), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.COAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.EMERALD_JELLYFISH.get()), new ItemStack(Items.EMERALD, 12), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.LAPIS_LAZULI_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.SLIME_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.HONEY_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.CLAY_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.RED_FUNGAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.BROWN_FUNGAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.WARPED_FUNGAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.CRIMSON_FUNGAL_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.GLOWSTONE_JELLYFISH.get()), new ItemStack(Items.EMERALD, 3), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.COW_JELLYFISH.get()), new ItemStack(Items.EMERALD, 6), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.SPONGE_JELLYFISH.get()), new ItemStack(Items.EMERALD, 10), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.SKELLYFISH.get()), new ItemStack(Items.EMERALD, 3), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.CREEPER_JELLYFISH.get()), new ItemStack(Items.EMERALD, 4), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.GUARDIAN_JELLYFISH.get()), new ItemStack(Items.EMERALD, 5), 12, 10, 0.05F));
+                event.getTrades().get(2).add((entity, random) -> new MerchantOffer(new ItemStack(MoreJellyfishItems.QUARTZ_JELLYFISH.get()), new ItemStack(Items.EMERALD, 2), 12, 10, 0.05F));
+
             }
         }
     }

@@ -88,7 +88,7 @@ minecraft {
 }
 repositories {
     maven {
-        url = "https://www.cursemaven.com"
+        url = "https://jitpack.io"
     }
 }
 
@@ -98,7 +98,8 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.16.4-35.1.0'
 
-    implementation fg.deobf("curse.maven:jellyfishing:3117993")
+    implementation 'com.github.BlueDuckYT:Jellyfishing:-SNAPSHOT'
+    //implementation fg.deobf("curse.maven:jellyfishing:397703:3133339")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"

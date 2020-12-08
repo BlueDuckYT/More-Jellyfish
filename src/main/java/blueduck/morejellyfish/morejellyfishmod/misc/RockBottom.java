@@ -2,17 +2,17 @@ package blueduck.morejellyfish.morejellyfishmod.misc;
 
 import blueduck.jellyfishing.jellyfishingmod.biomes.JellyfishingBiome;
 import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingBlocks;
+import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingParticles;
+import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingSounds;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishBlocks;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishEntities;
 import net.minecraft.block.Block;
+import net.minecraft.client.audio.BackgroundMusicSelector;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
-import net.minecraft.world.biome.MobSpawnInfo;
-import net.minecraft.world.biome.MoodSoundAmbience;
+import net.minecraft.world.biome.*;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
@@ -33,7 +33,7 @@ public class RockBottom extends JellyfishingBiome {
 
 
     public RockBottom() {
-        super(CLIMATE, Biome.Category.OCEAN, -1.8F, .25F, (new net.minecraft.world.biome.BiomeAmbience.Builder()).setWaterColor(4159204).setWaterFogColor(329011).setFogColor(12638463).withSkyColor(7842047).setMoodSound(MoodSoundAmbience.DEFAULT_CAVE).build(), GENERATION_SETTINGS.build(), SPAWN_SETTINGS.copy());
+        super(CLIMATE, Biome.Category.OCEAN, -1.8F, .25F, (new net.minecraft.world.biome.BiomeAmbience.Builder()).setWaterColor(4159204).setWaterFogColor(329011).setFogColor(12638463).withSkyColor(7842047).setMoodSound(MoodSoundAmbience.DEFAULT_CAVE).setParticle(new ParticleEffectAmbience(JellyfishingParticles.CLOUD_PARTICLE.get(), 0.0000005F)).setMusic(new BackgroundMusicSelector(JellyfishingSounds.BACKGROUND_MUSIC.get(), 200, 4000, false)).build(), GENERATION_SETTINGS.build(), SPAWN_SETTINGS.copy());
     }
 
 
