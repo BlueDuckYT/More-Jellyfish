@@ -38,6 +38,7 @@ public class MoreJellyfishBiomes {
         registerBiome(KELP_FOREST.get(), "kelp_forest", BiomeManager.BiomeType.COOL, BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.OVERWORLD);
     }
     public static void registerBiome(Biome biome, String name, BiomeManager.BiomeType type, BiomeDictionary.Type... types) {
+        BiomeDictionary.addTypes(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation("more_jellyfish:" + name)), types);
         BiomeManager.addBiome(type, new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation("more_jellyfish:" + name)), (Integer)JellyfishingMod.CONFIG.BIOME_WEIGHT.get()));
 
 
