@@ -18,7 +18,7 @@ apply plugin: 'maven-publish'
 
 version = '1.0'
 group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'modid'
+archivesBaseName = 'more_jellyfish'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 //Print out JVM information so that we know what version is running. Extreamly useful for people to know when helping you.
@@ -97,11 +97,11 @@ repositories {
     maven { url = 'https://dist.creeper.host/Sponge/maven' }
     jcenter()
     mavenCentral()
-    maven { url "https://www.cursemaven.com" }
+    //maven { url "https://www.cursemaven.com" }
     maven { url 'https://jitpack.io' }
-    flatDir {
-        dirs 'deps'
-    }
+//    flatDir {
+//        dirs 'deps'
+//    }
 }
 
 dependencies {
@@ -110,9 +110,8 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.16.4-35.1.0'
 
-    // implementation fg.deobf("ignored:Jellyfishing-1.6.0")
 
-    // implementation 'com.github.BlueDuckYT:Jellyfishing:-SNAPSHOT'
+    implementation 'com.github.BlueDuckYT:Jellyfishing:-SNAPSHOT'
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
