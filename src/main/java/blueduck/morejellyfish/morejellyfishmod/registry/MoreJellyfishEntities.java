@@ -1,11 +1,5 @@
 package blueduck.morejellyfish.morejellyfishmod.registry;
 
-import blueduck.jellyfishing.jellyfishingmod.JellyfishingMod;
-import blueduck.jellyfishing.jellyfishingmod.biomes.JellyfishFields;
-import blueduck.jellyfishing.jellyfishingmod.entities.AbstractJellyfishEntity;
-import blueduck.jellyfishing.jellyfishingmod.entities.BlueJellyfishEntity;
-import blueduck.jellyfishing.jellyfishingmod.entities.JellyfishEntity;
-import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingBiomes;
 import blueduck.morejellyfish.morejellyfishmod.MoreJellyfishMod;
 import blueduck.morejellyfish.morejellyfishmod.client.renderer.*;
 import blueduck.morejellyfish.morejellyfishmod.entity.*;

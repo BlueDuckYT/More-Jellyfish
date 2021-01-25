@@ -1,7 +1,6 @@
 package blueduck.morejellyfish.morejellyfishmod.registry;
 
-import blueduck.jellyfishing.jellyfishingmod.JellyfishingMod;
-import blueduck.jellyfishing.jellyfishingmod.biomes.JellyfishFields;
+import blueduck.jellyfishing.JellyfishingMod;
 import blueduck.morejellyfish.morejellyfishmod.MoreJellyfishMod;
 import blueduck.morejellyfish.morejellyfishmod.misc.KelpForest;
 import blueduck.morejellyfish.morejellyfishmod.misc.RockBottom;
@@ -39,7 +38,7 @@ public class MoreJellyfishBiomes {
     }
     public static void registerBiome(Biome biome, String name, BiomeManager.BiomeType type, BiomeDictionary.Type... types) {
         BiomeDictionary.addTypes(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation("more_jellyfish:" + name)), types);
-        BiomeManager.addBiome(type, new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation("more_jellyfish:" + name)), (Integer)JellyfishingMod.CONFIG.BIOME_WEIGHT.get()));
+        BiomeManager.addBiome(type, new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation("more_jellyfish:" + name)), (Integer) JellyfishingMod.CONFIG.BIOME_WEIGHT.get()));
 
 
     }

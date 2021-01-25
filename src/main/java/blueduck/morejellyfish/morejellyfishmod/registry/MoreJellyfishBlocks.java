@@ -1,9 +1,8 @@
 package blueduck.morejellyfish.morejellyfishmod.registry;
 
-import blueduck.jellyfishing.jellyfishingmod.JellyfishingMod;
-import blueduck.jellyfishing.jellyfishingmod.blocks.AlgaeGrassBlock;
-import blueduck.jellyfishing.jellyfishingmod.blocks.JellyBlock;
-import blueduck.jellyfishing.jellyfishingmod.registry.BlockItemBase;
+import blueduck.jellyfishing.blocks.AlgaeGrassBlock;
+import blueduck.jellyfishing.blocks.JellyBlock;
+import blueduck.jellyfishing.registry.BlockItemBase;
 import blueduck.morejellyfish.morejellyfishmod.MoreJellyfishMod;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;

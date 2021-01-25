@@ -1,6 +1,6 @@
 package blueduck.morejellyfish.morejellyfishmod.registry;
 
-import blueduck.jellyfishing.jellyfishingmod.items.JellyfishItem;
+import blueduck.jellyfishing.items.JellyfishItem;
 import blueduck.morejellyfish.morejellyfishmod.MoreJellyfishMod;
 import blueduck.morejellyfish.morejellyfishmod.misc.GelatinousMilkItem;
 import blueduck.morejellyfish.morejellyfishmod.misc.MoreJellyfishSpawnEgg;

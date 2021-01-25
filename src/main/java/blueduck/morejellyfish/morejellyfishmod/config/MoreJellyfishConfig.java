@@ -1,6 +1,5 @@
 package blueduck.morejellyfish.morejellyfishmod.config;
 
-import blueduck.jellyfishing.jellyfishingmod.misc.ConfigHelper;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public class MoreJellyfishConfig {

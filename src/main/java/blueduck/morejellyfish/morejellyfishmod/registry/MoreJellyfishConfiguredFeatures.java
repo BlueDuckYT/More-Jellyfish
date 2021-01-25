@@ -1,6 +1,6 @@
 package blueduck.morejellyfish.morejellyfishmod.registry;
 
-import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingFeatures;
+import blueduck.jellyfishing.registry.JellyfishingFeatures;
 import net.minecraft.block.Block;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;

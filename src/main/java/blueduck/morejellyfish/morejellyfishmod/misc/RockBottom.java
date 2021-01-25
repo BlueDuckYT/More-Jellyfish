@@ -1,9 +1,8 @@
 package blueduck.morejellyfish.morejellyfishmod.misc;
 
-import blueduck.jellyfishing.jellyfishingmod.biomes.JellyfishingBiome;
-import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingBlocks;
-import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingParticles;
-import blueduck.jellyfishing.jellyfishingmod.registry.JellyfishingSounds;
+import blueduck.jellyfishing.biomes.JellyfishingBiome;
+import blueduck.jellyfishing.registry.JellyfishingParticles;
+import blueduck.jellyfishing.registry.JellyfishingSounds;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishBlocks;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishEntities;
 import net.minecraft.block.Block;

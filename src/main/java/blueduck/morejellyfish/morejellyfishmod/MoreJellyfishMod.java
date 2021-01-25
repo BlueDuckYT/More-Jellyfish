@@ -1,11 +1,10 @@
 package blueduck.morejellyfish.morejellyfishmod;
 
-import blueduck.jellyfishing.jellyfishingmod.JellyfishingMod;
-import blueduck.jellyfishing.jellyfishingmod.biomes.JellyfishFields;
-import blueduck.jellyfishing.jellyfishingmod.entities.AbstractJellyfishEntity;
-import blueduck.jellyfishing.jellyfishingmod.misc.ConfigHelper;
-import blueduck.jellyfishing.jellyfishingmod.misc.JellyfishingConfig;
-import blueduck.jellyfishing.jellyfishingmod.registry.*;
+import blueduck.jellyfishing.JellyfishingMod;
+import blueduck.jellyfishing.entities.AbstractJellyfishEntity;
+import blueduck.jellyfishing.registry.JellyfishingConfiguredFeatures;
+import blueduck.jellyfishing.registry.JellyfishingVillagers;
+import blueduck.morejellyfish.morejellyfishmod.config.ConfigHelper;
 import blueduck.morejellyfish.morejellyfishmod.config.MoreJellyfishConfig;
 import blueduck.morejellyfish.morejellyfishmod.entity.EmeraldJellyfishEntity;
 import blueduck.morejellyfish.morejellyfishmod.misc.MoreJellyfishSpawnEgg;

@@ -1,6 +1,6 @@
 package blueduck.morejellyfish.morejellyfishmod.entity;
 
-import blueduck.jellyfishing.jellyfishingmod.entities.AbstractJellyfishEntity;
+import blueduck.jellyfishing.entities.AbstractJellyfishEntity;
 import blueduck.morejellyfish.morejellyfishmod.registry.MoreJellyfishItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.fish.AbstractFishEntity;
