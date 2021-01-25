@@ -24,6 +24,9 @@ sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = co
 //Print out JVM information so that we know what version is running. Extreamly useful for people to know when helping you.
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 
+
+
+
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   Snapshot are built nightly.
@@ -96,6 +99,9 @@ repositories {
     mavenCentral()
     maven { url "https://www.cursemaven.com" }
     maven { url 'https://jitpack.io' }
+    flatDir {
+        dirs 'deps'
+    }
 }
 
 dependencies {
@@ -104,8 +110,9 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.16.4-35.1.0'
 
+    // implementation fg.deobf("ignored:Jellyfishing-1.6.0")
 
-    implementation fg.deobf("curse.maven:Jellyfishing-397703:3133339")
+    // implementation 'com.github.BlueDuckYT:Jellyfishing:-SNAPSHOT'
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
