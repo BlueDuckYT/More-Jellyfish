@@ -1,7 +1,6 @@
 package blueduck.morejellyfish.morejellyfishmod.client.model;
 
 
-import blueduck.jellyfishing.jellyfishingmod.entities.JellyfishEntity;
 import blueduck.morejellyfish.morejellyfishmod.entity.DiamondJellyfishEntity;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;

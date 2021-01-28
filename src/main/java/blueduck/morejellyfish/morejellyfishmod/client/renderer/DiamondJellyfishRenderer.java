@@ -1,7 +1,5 @@
 package blueduck.morejellyfish.morejellyfishmod.client.renderer;
 
-import blueduck.jellyfishing.jellyfishingmod.client.entity.model.JellyfishModel;
-import blueduck.jellyfishing.jellyfishingmod.entities.JellyfishEntity;
 import blueduck.morejellyfish.morejellyfishmod.client.model.DiamondJellyfishModel;
 import blueduck.morejellyfish.morejellyfishmod.entity.DiamondJellyfishEntity;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
