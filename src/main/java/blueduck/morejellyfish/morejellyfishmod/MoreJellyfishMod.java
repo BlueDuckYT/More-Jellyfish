@@ -3,6 +3,7 @@ package blueduck.morejellyfish.morejellyfishmod;
 import blueduck.jellyfishing.JellyfishingMod;
 import blueduck.jellyfishing.entities.AbstractJellyfishEntity;
 import blueduck.jellyfishing.registry.JellyfishingConfiguredFeatures;
+import blueduck.jellyfishing.registry.JellyfishingEntities;
 import blueduck.jellyfishing.registry.JellyfishingVillagers;
 import blueduck.morejellyfish.morejellyfishmod.config.ConfigHelper;
 import blueduck.morejellyfish.morejellyfishmod.config.MoreJellyfishConfig;
@@ -15,6 +16,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
@@ -33,6 +35,7 @@ import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.placement.Placement;
@@ -98,6 +101,7 @@ public class MoreJellyfishMod {
     private void setup(final FMLCommonSetupEvent event) {
         for (RegistryObject<EntityType<?>> ENTITY: MoreJellyfishEntities.ENTITIES.getEntries()) {
             GlobalEntityTypeAttributes.put((EntityType<? extends LivingEntity>) ENTITY.get(), AbstractJellyfishEntity.func_234176_m_().create()/*(or your own)*/);
+            EntitySpawnPlacementRegistry.register(JellyfishingEntities.JELLYFISH.get(), EntitySpawnPlacementRegistry.PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AbstractJellyfishEntity::canSpawn);
         }
     }
 
