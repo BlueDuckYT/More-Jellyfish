@@ -15,10 +15,7 @@ import blueduck.morejellyfish.morejellyfishmod.registry.*;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.EntitySpawnPlacementRegistry;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.item.ItemStack;
@@ -101,7 +98,7 @@ public class MoreJellyfishMod {
     private void setup(final FMLCommonSetupEvent event) {
         for (RegistryObject<EntityType<?>> ENTITY: MoreJellyfishEntities.ENTITIES.getEntries()) {
             GlobalEntityTypeAttributes.put((EntityType<? extends LivingEntity>) ENTITY.get(), AbstractJellyfishEntity.func_234176_m_().create()/*(or your own)*/);
-            EntitySpawnPlacementRegistry.register(JellyfishingEntities.JELLYFISH.get(), EntitySpawnPlacementRegistry.PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AbstractJellyfishEntity::canSpawn);
+            EntitySpawnPlacementRegistry.register((EntityType<? extends AbstractJellyfishEntity>) ENTITY.get(), EntitySpawnPlacementRegistry.PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AbstractJellyfishEntity::canSpawn);
         }
     }
 

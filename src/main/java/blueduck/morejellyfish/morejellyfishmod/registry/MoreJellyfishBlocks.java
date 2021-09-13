@@ -2,17 +2,23 @@ package blueduck.morejellyfish.morejellyfishmod.registry;
 
 import blueduck.jellyfishing.blocks.AlgaeGrassBlock;
 import blueduck.jellyfishing.blocks.JellyBlock;
+import blueduck.jellyfishing.blocks.VerticalSlabBlock;
 import blueduck.jellyfishing.registry.BlockItemBase;
 import blueduck.morejellyfish.morejellyfishmod.MoreJellyfishMod;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.function.Supplier;
 
 public class MoreJellyfishBlocks {
 
@@ -31,6 +37,10 @@ public class MoreJellyfishBlocks {
     public static final RegistryObject<Block> DEEP_CORALSTONE_SLAB = BLOCKS.register("deep_coralstone_slab", () -> new SlabBlock(Block.Properties.from(DEEP_CORALSTONE.get())));
     public static final RegistryObject<Item> DEEP_CORALSTONE_SLAB_ITEM = ITEMS.register("deep_coralstone_slab", () -> new BlockItemBase(DEEP_CORALSTONE_SLAB.get()));
 
+    public static final RegistryObject<Block> DEEP_CORALSTONE_VERTICAL_SLAB = conditionallyRegisterBlock("deep_coralstone_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.from(DEEP_CORALSTONE.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Item> DEEP_CORALSTONE_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("deep_coralstone_vertical_slab", () -> new BlockItem(DEEP_CORALSTONE_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
+
+
     public static final RegistryObject<Block> POLISHED_DEEP_CORALSTONE = BLOCKS.register("polished_deep_coralstone", () -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.PURPLE).sound(SoundType.STONE).hardnessAndResistance(1.5F, 1F).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
     public static final RegistryObject<Item> POLISHED_DEEP_CORALSTONE_ITEM = ITEMS.register("polished_deep_coralstone", () -> new BlockItemBase(POLISHED_DEEP_CORALSTONE.get()));
 
@@ -39,6 +49,9 @@ public class MoreJellyfishBlocks {
 
     public static final RegistryObject<Block> POLISHED_DEEP_CORALSTONE_SLAB = BLOCKS.register("polished_deep_coralstone_slab", () -> new SlabBlock(Block.Properties.from(POLISHED_DEEP_CORALSTONE.get())));
     public static final RegistryObject<Item> POLISHED_DEEP_CORALSTONE_SLAB_ITEM = ITEMS.register("polished_deep_coralstone_slab", () -> new BlockItemBase(POLISHED_DEEP_CORALSTONE_SLAB.get()));
+
+    public static final RegistryObject<Block> POLISHED_DEEP_CORALSTONE_VERTICAL_SLAB = conditionallyRegisterBlock("polished_deep_coralstone_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.from(POLISHED_DEEP_CORALSTONE.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Item> POLISHED_DEEP_CORALSTONE_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("polished_deep_coralstone_vertical_slab", () -> new BlockItem(POLISHED_DEEP_CORALSTONE_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
 
     public static final RegistryObject<Block> DEEP_ALGAE_GRASS = BLOCKS.register("deep_algae_grass", () -> new AlgaeGrassBlock(Block.Properties.create(Material.EARTH, MaterialColor.LIME).sound(SoundType.WET_GRASS).hardnessAndResistance(1F, 1F).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
     public static final RegistryObject<Item> DEEP_ALGAE_GRASS_ITEM = ITEMS.register("deep_algae_grass", () -> new BlockItemBase(DEEP_ALGAE_GRASS.get()));
@@ -51,5 +64,20 @@ public class MoreJellyfishBlocks {
     public static void init() {
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+    }
+
+    public static RegistryObject<Item> conditionallyRegisterItem(String registryName, Supplier<Item> item, Supplier<Boolean> condition) {
+        if (condition.get())
+            return ITEMS.register(registryName, item);
+        return null;
+    }
+    public static RegistryObject<Block> conditionallyRegisterBlock(String registryName, Supplier<Block> block, Supplier<Boolean> condition) {
+        if (condition.get())
+            return BLOCKS.register(registryName, block);
+        return null;
+    }
+
+    public static boolean isLoaded(String modid) {
+        return ModList.get().isLoaded(modid);
     }
 }

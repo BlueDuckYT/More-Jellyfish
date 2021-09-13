@@ -1,6 +1,7 @@
 package blueduck.morejellyfish.morejellyfishmod.registry;
 
 import blueduck.jellyfishing.JellyfishingMod;
+import blueduck.jellyfishing.miscellaneous.AbnormalsCoreOceanBiomeRegistry;
 import blueduck.morejellyfish.morejellyfishmod.MoreJellyfishMod;
 import blueduck.morejellyfish.morejellyfishmod.misc.KelpForest;
 import blueduck.morejellyfish.morejellyfishmod.misc.RockBottom;
@@ -14,6 +15,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -38,8 +40,14 @@ public class MoreJellyfishBiomes {
     }
     public static void registerBiome(Biome biome, String name, BiomeManager.BiomeType type, BiomeDictionary.Type... types) {
         BiomeDictionary.addTypes(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation("more_jellyfish:" + name)), types);
-        BiomeManager.addBiome(type, new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation("more_jellyfish:" + name)), (Integer) JellyfishingMod.CONFIG.BIOME_WEIGHT.get()));
-
+        if (ModList.get().isLoaded("abnormals_core")) {
+            if (name.equals("kelp_forest")) {
+                AbnormalsCoreOceanBiomeRegistry.registerBiome(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation("more_jellyfish:" + name)), RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation("more_jellyfish:" + "rock_bottom")), JellyfishingMod.CONFIG.BIOME_WEIGHT.get());
+            }
+        }
+        else {
+            BiomeManager.addBiome(type, new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation("more_jellyfish:" + name)), (Integer) JellyfishingMod.CONFIG.BIOME_WEIGHT.get()));
+        }
 
     }
 }

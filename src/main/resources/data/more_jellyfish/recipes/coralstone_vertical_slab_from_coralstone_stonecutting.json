@@ -1,0 +1,22 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "item": "more_jellyfish:deep_coralstone_vertical_slab",
+          "type": "forge:item_exists"
+        }
+      ],
+
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "more_jellyfish:deep_coralstone"
+        },
+        "result": "more_jellyfish:deep_coralstone_vertical_slab",
+        "count": 2
+      }
+    }
+  ]
+}
